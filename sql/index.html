@@ -118,28 +118,82 @@
                 </div>
                 <!-- //intro2 -->
 
-                <div class="bc-docs-section">
-                    <h3 id="intro1" class="page-header">MY SQL</h3>
 
-                </div>
+                <div class="bc-docs-section">
+                    <h3 id="intro3" class="page-header">MY SQL 실행</h3>
+                    <div class="bs-callout bs-callout-info">
+                        윈도우 : cd C:/MAMP/bin/mysql/bin<br>
+                        로그인 : mysql -uroot -proot
+                    </div>
+<pre class="language-js"><code>mysql: [Warning] Using a password on the command line interface can be insecure.
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 6
+    Server version: 5.7.24 MySQL Community Server (GPL)
+    
+    Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+    
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
+    
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+</code></pre>
+</div>
                 <!-- //intro3 -->
 
-                <div class="bc-docs-section">
-                    <h3 id="intro4" class="page-header">MY SQL</h3>
+                <div class="bc-docs-section">                 
                     <h3 id="intro4" class="page-header">데이터베이스</h3>
-                    <div id="intro4" class="page-header">데이터베이스 보기</div>
-                    <div id="intro4-1" class="page-header">데이터베이스 만들기</div>
-                    <div id="intro4-2" class="page-header">데이터베이스 사용</div>
-                    <div id="intro4-3" class="page-header">데이터베이스 삭제</div>
+                    <h4 id="intro4-1" class="page-header">데이터베이스 보기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        show database;
+                    </div>
+
+                    <h4 id="intro4-2" class="page-header">데이터베이스 만들기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        create database 데이터 베이스 이름;
+                    </div>
+
+                    <h4 id="intro4-3" class="page-header">데이터베이스 사용</h4>
+                    <div class="bs-callout bs-callout-info">
+                        use 데이터 베이스 이름;
+                    </div>
+
+                    <h4 id="intro4-4" class="page-header">데이터베이스 삭제</h4>
+                    <div class="bs-callout bs-callout-info">
+                        drop database  데이터 베이스이름;
+                    </div>
                 </div>
                 <!-- //intro4 -->
 
                 <div class="bc-docs-section">
                     <h3 id="intro5" class="page-header">테이블</h3>
-                    <h3 id="intro5-1" class="page-header">테이블 만들기</h3>
-                    <div id="intro5-2" class="page-header">데이터베이스 전체보기</div>
-                    <div id="intro5-3" class="page-header">데이터베이스 보기</div>
-                    <div id="intro5-4" class="page-header">데이터베이스 삭제</div>
+                    <h4 id="intro5-1" class="page-header">테이블 만들기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        create table  테이블 이름
+                    </div>
+<pre><code class="language-js">create table reviews(
+    reviewID int(10) unsigned auto_increment, 
+    memberID int(10) unsigned,
+    youText tinytext NOT NULL,
+    regTime int(30) NOT NULL,
+    PRIMARY KEY(reviewID)
+) charset=utf8;
+</code></pre>
+                    <h4 id="intro5-2" class="page-header">데이터베이스 전체보기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        show tables;
+                    </div>
+
+                    <h4 id="intro5-3" class="page-header">데이터베이스 보기</h4>
+                    <div class="bs-callout bs-callout-info">
+                        desc 테이블 이름;
+                    </div>
+
+                    <h4 id="intro5-4" class="page-header">데이터베이스 삭제</h4>
+                    <div class="bs-callout bs-callout-info">
+                        drop table 테이블 이름;
+                    </div>
                 </div>
                 <!-- //intro5 -->
 
