@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,11 @@
 
 
     <link rel="stylesheet" href="assets/css/quiz.css">
-    <link rel="stylesheet" href="assets/css/ani.css">
-    <style>
-        .quiz__score {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            width: 70px;
-            height: 50px;
-            line-height: 50px;
-            border-radius: 10px;
-            background-color: #412E91;
-            color: #fff;
-            text-align: center;
-            font-size: 20px;
-        }
-    </style>
+
+
+
 </head>
+
 <body>
     <header id="header">
         <h1>
@@ -35,15 +24,15 @@
                 <li><a href="quizEffect02.html">2</a></li>
                 <li><a href="quizEffect03.html">3</a></li>
                 <li class="active"><a href="quizEffect04.html">4</a></li>
-                <li><a href="quizEffect100.html">5</a></li>
+                <li><a href="quizEffect100.html">6</a></li>
+                <li><a href="quizEffect100.html">7</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
-    
+
     <main id="main">
         <div class="quiz__wrap"></div>
-        <div class="quiz__score">0</div>
     </main>
     <!-- //main -->
 
@@ -54,12 +43,11 @@
 
     </script>
     <script>
+
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
-        const quizScore = document.querySelector(".quiz__score");
-        let totalScore = 0;
 
-       
+
         // 문제 정보
         const quizInfo = [
             {
@@ -1376,81 +1364,91 @@
         ]
 
         // 문제 출력
-        const updateQuiz = () => {
+        const updataQuiz = () => {
             const quizArray = [];
-        quizInfo.forEach((quiz, index) => {
-            quizArray.push(`
-                <div class="quiz">
-                    <div class="quiz__header">${quiz.infoDate} ${quiz.infoType}
-                    </div>
+
+            quizInfo.forEach((quiz, index) => {
+                quizArray.push(`
+                    <div class="quiz">
+                    <div class="quiz__header">${quiz.infoDate} ${quiz.infoType}</div>
+
                     <div class="quiz__main">
-                        <div class="quiz__question">${index+1}.${quiz.infoQuestion}</div>
+                        <div class="quiz__question">${index + 1}. ${quiz.infoQuestion}</div>
+
                         <div class="quiz__choice">
                             <label for="choice1-${index}">
-                                <input type="radio" id="choice1-${index}" name="choice${index}" value="1">
+                                <input type="radio" id="choice1-${index}" name="choice-${index}" value="1">
                                 <span>${quiz.infoChoice[1]}</span>
                             </label>
                             <label for="choice2-${index}">
-                                <input type="radio" id="choice2-${index}" name="choice${index}" value="2">
+                                <input type="radio" id="choice2-${index}" name="choice-${index}" value="2">
                                 <span>${quiz.infoChoice[2]}</span>
                             </label>
                             <label for="choice3-${index}">
-                                <input type="radio" id="choice3-${index}" name="choice${index}" value="3" >
+                                <input type="radio" id="choice3-${index}" name="choice-${index}" value="3" >
                                 <span>${quiz.infoChoice[3]}</span>
                             </label>
                             <label for="choice4-${index}">
-                                <input type="radio" id="choice4-${index}" name="choice${index}" value="4">
+                                <input type="radio" id="choice4-${index}" name="choice-${index}" value="4">
                                 <span>${quiz.infoChoice[4]}</span>
                             </label>
                         </div>
                         <div class="quiz__answer none">${quiz.infoAnswer}</div>
                         <div class="quiz__desc none">${quiz.infoDesc}</div>
+
                     </div>
                     <div class="quiz__footer">
-                        <button class="quiz__confirm">정답확인하기</button>
+                        <button class="quiz__confirm" data index="${index}">정답확인하기</button>
                     </div>
                 </div>
-            `);
-        });
-        quizWrap.innerHTML = quizArray.join(" ");
-        }
-        updateQuiz();
+                `);
+            });
 
-        // 정답 확인
+            quizWrap.innerHTML = quizArray.join(" ");
+        };
+
+        //정답확인
         const answerQuiz = (index) => {
-            const quizChoices = document.querySelectorAll(`.quiz__choice input[name="choice${index}"]:checked`);
+            const quizChoices = quizWrap.querySelectorAll(`.quiz__choice input[name="choice-${index}"]:checked`);
+            const quizElement = quizWrap.querySelectorAll(".quiz")[index];
             const answerElement = quizWrap.querySelectorAll(".quiz__answer")[index];
             const descElement = quizWrap.querySelectorAll(".quiz__desc")[index];
-            const quizzElement = quizWrap.querySelectorAll(".quiz")[index];
+            const confirmElement = quizWrap.querySelectorAll(".quiz__confirm")[index];
 
             if (quizChoices.length > 0) {
-                const userAnswer = quizChoices[0].value;
+                const userAnswer = quizChoices[0].value;            // 사용자가 체크한 정답.
 
                 if (userAnswer === quizInfo[index].infoAnswer) {
-                    answerElement.textContent = "정답입니다!";
-                    quizzElement.classList.add("good");
-                    totalScore++;
-                    quizScore.innerHTML = totalScore;
+                    quizElement.classList.add("good");              // 0표시
+                    descElement.classList.remove("none");           // 해설 보기
+
                 } else {
-                    answerElement.textContent = "오답입니다!";
-                    quizzElement.classList.add("bad");
-                    descElement.classList.remove("none");
+                    quizElement.classList.add("bad");               // X 표시
+                    descElement.classList.remove("none");           // 해설 보기
+                    answerElement.classList.remove("none");         // 정답 보기
                 }
+
+                confirmElement.classList.add("none");
+
+            } else {
+                alert("정답을 선택해주세요.");
             }
-        }
 
-        // 페이지가 로드된 후 실행
+        };
+
+        //페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
-            updateQuiz();
+            updataQuiz();
 
-            const confirmButtons = document.querySelectorAll(".quiz__confirm");
-            confirmButtons.forEach((button, index) => {
+            const quizConfirm = document.querySelectorAll(".quiz__confirm");
+
+            quizConfirm.forEach((button, index) => {
                 button.addEventListener("click", () => {
                     answerQuiz(index);
                 });
-            });
+            })
         });
-
     </script>
 </body>
+
 </html>

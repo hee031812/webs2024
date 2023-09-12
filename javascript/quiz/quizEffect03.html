@@ -7,7 +7,6 @@
 
 
     <link rel="stylesheet" href="assets/css/quiz.css">
-    <link rel="stylesheet" href="assets/css/ani.css">
 </head>
 <body>
     <header id="header">
@@ -18,6 +17,9 @@
                 <li><a href="quizEffect02.html">2</a></li>
                 <li class="active"><a href="quizEffect03.html">3</a></li>
                 <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
             </ul>
         </nav>
     </header>
@@ -79,6 +81,8 @@
         const quizChoice = quizWrap.querySelectorAll(".quiz__choice span")
         const quizSelect = quizWrap.querySelectorAll(".quiz__choice input")
         const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+
+
         // 문제 정보
         const quizInfo = [
             {
@@ -91,6 +95,8 @@
                 infoDesc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다. ",
             },
         ]
+
+
         // 문제 출력
         quizHeader.innerHTML = quizInfo[0].infoDate + " " + quizInfo[0].infoType;
         quizQuestion.innerHTML = quizInfo[0].infoNum + ". " + quizInfo[0].infoQuestion;
@@ -99,6 +105,8 @@
         for (let i = 0; i < quizChoice.length; i++) {
             quizChoice[i].innerText = quizInfo[0].infoChoice[i];
         }
+
+
         // 정답 확인
         quizConfirm.addEventListener("click", () => {
             let selectedChoice = null;
