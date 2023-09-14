@@ -217,7 +217,7 @@ body::after {
 .quiz__question span {
     font-size: 24px;
     line-height: 1.5;
-    font-weight: 300;
+    font-weight: 400;
 }
 .quiz__img {
     margin-bottom: 10px;
@@ -498,15 +498,16 @@ cursor: pointer;
         padding: 7px;
     }
     .quiz__wrap {
-        padding: 0 16px;
+        padding: 0 6px;
         margin-top: 0;
     }
     .quiz__wrap > .quiz {
         width: 100%;
-        padding: 20px;
+        padding: 30px 20px;
     }
     .quiz__header {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 14px;
     }
     .quiz__date {
         font-size: 14px;
@@ -515,7 +516,7 @@ cursor: pointer;
         font-size: 14px;
     }
     .quiz__question {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         line-height: 1.5;
         font-size: 20px;
     }
@@ -535,6 +536,9 @@ cursor: pointer;
         padding: 14px;
     }
     .quiz__choice label span {
+        padding: 13px;
+    }
+    .quiz__confirm {
         padding: 13px;
     }
 
