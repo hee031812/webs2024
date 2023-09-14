@@ -61,17 +61,12 @@
 
 
 {
-const obj1 = { a: 100, b: 200, c: "javascrtipt" };
-const obj2 = { ...obj1, d: "jquery"};
-const obj3 = { ...obj1, ...obj2};
+    const obj1 = {a : 100, b: 200 , c: "javascript" };
+    const obj2 = {d : 300, e: 400 , f: "jquery" };
 
-console.log(obj1);      //a: 100, b: 200, c: javascript
-console.log(obj2);      //a: 100, b: 200, c: javascript, d: jquery
-console.log(obj2.a);    //100
-console.log(obj2.b);    //200
-console.log(obj2.c);    //javascript
-console.log(obj2.d);    //jquery
-console.log(obj3);      //a: 100, b: 200, c: javascript, d: jquery
+    const obj3 = Object.assign(obj1, obj2);
+
+    console.log(obj3);
 }
     </script>
 </body>

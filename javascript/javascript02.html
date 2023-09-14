@@ -150,25 +150,22 @@
         <div id="sample04" class="sample">
             <h3>04. 배열 : 데이터 불러오기 + 갯수</h3>
             <p> 배열은 여러 데이터 항목을 하나의 변수에 저장하는 자료 구조입니다. 
-                배열을 사용하면 하나의 변수에 여러 값을 보다 쉽게 관리하고 조작할 수 있습니다.
+                배열 안에 있는 데이터의 갯수를 출력할 수 있습니다.
             </p>
 <pre><code class="language-js">{
     const arr = [100, 200, "javascript"];
 
-    console.log(arr[0], arr[1], arr[2]);
+    console.log(arr.length);
 }
 </code></pre>
             <p class="desc">
-                const arr = [100, 200, "javascript"];: 이 줄에서 arr이라는 상수 배열을 선언하고, 대괄호 [ ] 안에 세 개의 요소를 가진 배열을 생성합니다. <br>
-                배열의 첫 번째 요소는 100, 두 번째 요소는 200, 세 번째 요소는 문자열 "javascript"로 초기화됩니다.<br>
-                console.log(arr[0], arr[1], arr[2]);: 이 줄에서 console.log함수arr의 각 요소를 출력합니다. 
-                arr[0]은 배열의 첫 번째 요소를 나타내고, arr[1]은 두 번째 요소를, arr[2]는console.log 함수는 이 세 개의 값을 출력하고, 결과는 "100 200 javascript"이 됩니다.<br> 
+                베열이름.length는 배열의 길이를 나타냅니다.<br> 
             </p>
             <div class="result">
                 <details>
                     <summary>결과 확인하기</summary>
                     <div>
-                        100 200 javascript
+                        3
                     </div>
                 </details>
             </div>
@@ -179,18 +176,32 @@
             <h3>05. 배열 : 데이터 불러오기 : for( )   -가장많이쓰임-</h3>
             <p> for 루프를 사용하여 배열의 데이터를 순회하고 불러올 수 있습니다.</p>
 <pre><code class="language-js">{
-    const arr = [100, 200, "javascript"];
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-    console.log(arr[0], arr[1], arr[2]);
+    for(i=1; i<=arr.length; i++){
+        console.log(arr[i]);
+    };
 }
 </code></pre>
             <p class="desc">
-                for 루프는 특히 배열과 같은 반복 가능한(iterable) 데이터 구조를 다룰 때 유용합니다.</p>
+                for문의 기본문법은 for(초기값; 조건식; 증감값) 입니다.<br>
+                arr이라는 이름의 상수 배열을 생성하고 초기화합니다. 배열 내부에 1부터 10까지의 정수가 들어있습니다.<br>
+                반복문이 시작을 정의하는 부분입니다. 변수 i를 0으로 초기화하고, i가 arr 배열의 길이보다 작을 동안에 반복을 실행하며 i를 1씩 증가시킵니다<br>
+                arr 배열의 인덱스 i에 해당하는 원소를 출력합니다<br>
+            </p>
             <div class="result">
                 <details>
                     <summary>결과 확인하기</summary>
                     <div>
-                        100 200 javascript
+                        100<br>
+                        200<br>
+                        300<br>
+                        400<br>
+                        500<br>
+                        600<br>
+                        700<br>
+                        800<br>
+                        900<br>
                     </div>
                 </details>
             </div>
@@ -234,7 +245,42 @@
                 <details>
                     <summary>결과 확인하기</summary>
                     <div>
-                        100 200 javascript
+                        100 <br>
+                        200<br>
+                        300<br>
+                        400<br>
+                        500<br>
+                        600<br>
+                        700<br>
+                        800<br>
+                        900<br>
+                        0<br>
+                        1<br>
+                        2<br>
+                        3<br>
+                        4<br>
+                        5<br>
+                        6<br>
+                        7<br>
+                        8<br>
+                        100<br>
+                        200<br>
+                        300<br>
+                        400<br>
+                        500<br>
+                        600<br>
+                        700<br>
+                        800<br>
+                        900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
+                        100,200,300,400,500,600,700,800,900<br>
                     </div>
                 </details>
             </div>
@@ -259,7 +305,15 @@
                 <details>
                     <summary>결과 확인하기</summary>
                     <div>
-                        100 200 javascript
+                        100<br>
+                        200<br>
+                        300<br>
+                        400<br>
+                        500<br>
+                        600<br>
+                        700<br>
+                        800<br>
+                        900<br>
                     </div>
                 </details>
             </div>
@@ -272,17 +326,44 @@
 <pre><code class="language-js">{
     const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-    for(let element in arr) {
-        console.log(arr[element]);             //이렇게 사용하면 배열에서도 사용가능.
+    for(let element in arr){
+        console.log(element);
+    }
+
+    //배열 출력
+    for(let element in arr){
+        console.log(arr[element]);
     }
 }
 </code></pre>
-            <p class="desc">배열에 대해서는 for in을 사용하는것이 더 적합합니다.</p>
+            <p class="desc">배열에 대해서는 for in을 사용하는것이 더 적합합니다.<br>
+                for in문의 기본 문법은 for (const key:키 in object:객체) {};입니다.<br>
+                for in 문은 배열의 각 요소를 순회하며 요소의 인덱스를 출력합니다.<br>
+                for...in 루프는 객체의 프로토타입 체인을 따라 상속된 속성도 열거합니다. 따라서 객체의 직접적인 프로퍼티뿐만 아니라 상속된 프로퍼티까지 열거될 수 있습니다.<br>
+                for in 문을 통해 배열의 요소를 출력할 수 있지만 사용하지 않는 것이 좋습니다.<br>
+            </p>
         <div class="result">
                 <details>
                     <summary>결과 확인하기</summary>
                     <div>
-                        100 200 javascript
+                        0<br>
+                        1<br>
+                        2<br>
+                        3<br>
+                        4<br>
+                        5<br>
+                        6<br>
+                        7<br>
+                        8<br>
+                        100<br>
+                        200<br>
+                        300<br>
+                        400<br>
+                        500<br>
+                        600<br>
+                        700<br>
+                        800<br>
+                        900<br>
                     </div>
                 </details>
             </div>
@@ -346,10 +427,14 @@
     <h3>11. 배열 : 데이터 불러오기 : 배열 펼침 연산자</h3>
     <p> 이 코드는 배열 arr의 각 요소를 순회하고 각 요소를 콘솔에 출력하는 것이 아니라, 요소를 조건에 따라 필터링하여 새로운 배열을 생성하는 작업을 수행하려고 시도하고 있습니다.</p>
 <pre><code class="language-js">{
-const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];  
-arr.filter((el) => {
-    console.log(el);
-});
+    const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArray = [...arr1, ...arr2];
+console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
+}
+{
+const numbers = [1, 2, 3];
+console.log(...numbers); // 1 2 3
 }
 </code></pre>
 <p class="desc">arr.filter((el) => { console.log(el); });: filter 메서드는 주어진 함수를 사용하여 배열을 필터링하고 조건을 충족하는 요소만을 포함하는 새로운 배열을 반환합니다. 그러나 여기서 주어진 함수는 각 요소 el을 콘솔에 출력하는 역할을 수행하고 있으며, filter 메서드는 조건을 검사하여 요소를 선택해야 합니다.</p>
@@ -357,7 +442,8 @@ arr.filter((el) => {
     <details>
         <summary>결과 확인하기</summary>
         <div>
-            [500, 600, 700, 800, 900]
+            [1, 2, 3, 4, 5, 6] <br>
+            1 2 3 <br>
         </div>
     </details>
 </div>
@@ -368,18 +454,23 @@ arr.filter((el) => {
     <h3>12. 배열 : 데이터 불러오기 : 배열 구조분해 할당</h3>
     <p> </p>
 <pre><code class="language-js">{
-const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];  
-arr.filter((el) => {
-    console.log(el);
-});
-}
+const data = [1, 2, 3, 4, 5];
+
+// 배열 구조분해 할당을 사용하여 데이터를 불러옴
+const [first, second, ...rest] = data;
+
+console.log(first);              // 1
+console.log(second);             // 2
+console.log(rest);               // [3, 4, 5]}
 </code></pre>
-<p class="desc">arr.filter((el) => { console.log(el); });: filter 메서드는 주어진 함수를 사용하여 배열을 필터링하고 조건을 충족하는 요소만을 포함하는 새로운 배열을 반환합니다. 그러나 여기서 주어진 함수는 각 요소 el을 콘솔에 출력하는 역할을 수행하고 있으며, filter 메서드는 조건을 검사하여 요소를 선택해야 합니다.</p>
+<p class="desc">배열 구조분해 할당(destructuring assignment)을 사용하면 배열에서 원하는 값을 추출하여 변수에 할당할 수 있습니다. 이를 통해 배열의 요소에 간편하게 접근하고 변수에 저장할 수 있습니다. </p>
 <div class="result">
     <details>
         <summary>결과 확인하기</summary>
         <div>
-            [500, 600, 700, 800, 900]
+            1<br>
+            2<br>
+            [3, 4, 5]<br>
         </div>
     </details>
 </div>
@@ -412,10 +503,10 @@ arr.filter((el) => {
         <div>
             100 <br>
             200 <br>
-            "javascript" <br>
+            javascript <br>
             100 <br>
             200 <br>
-            "javascript" <br>
+            javascript <br>
         </div>
     </details>
 </div>
@@ -465,7 +556,7 @@ arr.filter((el) => {
     <details>
         <summary>결과 확인하기</summary>
         <div>
-            [ 100, 200, 'javascript' ]
+            100, 200, "javascript"
         </div>
     </details>
 </div>
@@ -490,7 +581,9 @@ arr.filter((el) => {
     <details>
         <summary>결과 확인하기</summary>
         <div>
-            [ [ 'a', 100 ], [ 'b', 200 ], [ 'c', 'javascript' ] ]
+            ['a', 100]<br>
+            ['b', 200]<br>
+            ['c', 'javascript']<br>
         </div>
     </details>
 </div>
