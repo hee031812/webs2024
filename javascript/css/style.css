@@ -3,7 +3,7 @@
     padding: 0;
 }
 a{
-    color:#000000;
+    color:#000;
     text-decoration: none;
 }
 li {
@@ -17,7 +17,7 @@ li {
 #header h1 {
     font-size: 4vmax;
     padding: 0 40px 40px;
-    color: #05512b(0, 0, 0);
+    color: rgb(5, 41, 26);
 }
 #header h1 a {
     text-decoration: none;
@@ -28,10 +28,6 @@ li {
     list-style: none;
     display: inline;
 }
-#header nav ul li.active a {
-    background-color: #043003;
-    color: #ffffff;
-}
 #header nav ul li a {
     display: inline-block;
     text-decoration: none;
@@ -41,18 +37,21 @@ li {
     margin-bottom: 5px;
     font-family: "nanumSquareNeo";
 }
-#header nav ul a:hover {
+#header nav ul li.active a {
     background-color: #043003;
-    color: #dcdcdc;
+    color: #ffffff;
+}
+#header nav ul li a:hover {
+    background-color: #043003;
+    color: #ffffffc1;
 }
 #main {
     min-height: 500px;
 }
-
 #footer {
     padding: 40px;
     text-align: center;
-    border-top: 1px dashed #6d6a6a;
+    border-top: 1px dashed #5d7c5f;
 }
 #footer a {
     color: rgb(0, 0, 0);
@@ -66,21 +65,24 @@ li {
 /*main__menu*/
 .main__menu {
     padding: 40px;
-    border-bottom: 1px dashed #696666;
+    border-bottom: 1px dashed #84a39171;
+}
+.main__menu ul {
+    margin-bottom: 10px;
 }
 .main__menu ul li a {
     font-family: nanumSquareNeo;
-    line-height: 1.6;
+    line-height: 1.8;
     color: rgb(7, 56, 22);
 }
 .main__menu ul li a:hover {
     text-decoration: underline;
     text-underline-position: under;
-    color: #0f503b3b;
+    color: rgb(101, 135, 108);
 }
 .main__menu ul li a strong {
     position: relative;
-    padding: 0 5px;
+    padding: 0 4px;
 }
 .main__menu ul li a strong::before {
     content: '';
@@ -89,15 +91,13 @@ li {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: hwb(162 2% 82% / 0.349);
+    background-color: #58746f3a;
     transition: all 0.3s;
     border-radius: 30px;
 }
 .main__menu ul li a:hover strong::before {
     height: 100%;
 }
-
-
 
 /* main__sample */
 .main__sample {
@@ -121,10 +121,15 @@ li {
     font-family: "nanumSquareNeo";
 }
 .main__sample .sample .desc {
-    background-color: #d6e2dc;
-    padding: 10px 10px 10px 20px;
-    border-left: 5px solid #072d22;
+    background-color: #bfdbca;
+    padding: 13px 10px 13px 20px;
+    border-left: 5px solid rgb(15, 40, 27);
     margin-bottom: 10px;
+    font-family: "nanumSquareNeo";
+    line-height: 1.5;
+    font-weight: 500;
+}
+.main__sample .sample .result {
     font-family: "nanumSquareNeo";
 }
 .main__sample .sample .result summary {
@@ -217,44 +222,14 @@ li {
     text-align: left;
 }
 
-@media (max-width: 800px) {
-    #header {
+@media (max-width:800px) {
+    .main__menu {
         padding: 20px;
-    }
-    #header h1 {
-        padding: 20px;
-    }
-    #header nav ul li a {
-        padding: 5px 10px;
-        font-size: 14px;
-    }
-    .main__menu{
-        padding: 20px;
-        font-size: 14px;
     }
     .main__sample {
         padding: 20px;
     }
-    .main__sample .sample h3 {
-        font-size: 20px;
-    }
-
-    .main__sample .sample p {
-        font-size: 14px;
-    }
-    .main__sample .sample .desc {
-        font-size: 14px;
-        padding: 8px 5px 8px 10px;
-    }
-    .main__sample .sample .result {
-        font-size: 14px;
-        line-height: 1.6;
-    }
     .main__desc {
         padding: 20px;
-        
-    }
-    pre code.h1js {
-        font-size: 14px;
     }
 }
