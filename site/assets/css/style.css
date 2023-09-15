@@ -159,7 +159,7 @@
 @media (max-width: 1290px){
     .slider__inner > .slider {
         width: 100%;
-        padding: 100px 16px;
+        padding: 80px 16px;
     }
     .slider__text h3 {
         font-size: 5vw;
@@ -205,7 +205,6 @@
 .intro__inner .container {
     display: flex;
     justify-content: space-between;
-    background-color: #ffffff;
 }
 .intro__img {
     width: 60%;
@@ -234,7 +233,7 @@
     transform: translateX(-50%);
 }
 .intro__img .img3 img {
-    width: 550px;
+    width: 600px;
 }
 .intro__text {
     position: relative;
@@ -259,7 +258,6 @@
 .intro__text p {
     font-size: 18px;
     line-height: 1.5;
-    padding: 0 0 0 7px;
 }
 @media (max-width: 1200px){
     .intro__inner .container  {
@@ -329,14 +327,14 @@
 .use__title h3 {
     font-size: 45px;
     font-weight: 800;
-    line-height: 1.3;
+    line-height: 1;
 }
 .use__title h3 em {
     font-weight: 300;
 }
 .use__title h3 span {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     color: #333;
 }
 .use__img {
@@ -350,7 +348,6 @@
 }
 .use__img > div figure {
     width: 100%;
-    border-radius: 20px;
     position: relative;
 }
 .use__img > div figure img {
@@ -369,6 +366,7 @@
     border-radius: 20px;
     opacity: 0;
     transition: opacity 0.3s;
+    cursor: pointer;
 }
 .use__img > div figure:hover::after {
     opacity: 1;
@@ -385,7 +383,7 @@
     color: #fff;
     z-index: 100;
     font-weight: 800;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s;
     opacity: 0;
 }
 .use__img > div p {
@@ -432,7 +430,7 @@
         margin-top: -10px;
     }
 }
-@media(max-width: 800px){
+@media(max-width: 600px){
     .use__img > div {
         width: 100%;
     }
