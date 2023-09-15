@@ -76,7 +76,7 @@ li {
 .main__menu ul li a:hover {
     text-decoration: underline;
     text-underline-position: under;
-    color: #062c2071;
+    color: #0f503b3b;
 }
 .main__menu ul li a strong {
     position: relative;
