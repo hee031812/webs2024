@@ -47,6 +47,8 @@ select,
 table,
 textarea {
     font-family: "nanumSquareNeo", "Malgun Gothic", "맑은고딕", Arial, Helvetica, sans-serif;
+    flex: 16px;
+    line-height: 1.5;
 }
 
 /* 링크초기화 */
@@ -74,6 +76,11 @@ ul, ol, li {
 em, 
 address {
     font-style: normal;
+}
+/* 이미지 최적화 */
+img {
+    width: 100%;
+    vertical-align: top;
 }
 /* 이미지 대체(IR)효과 */
 .ir {

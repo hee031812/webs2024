@@ -60,14 +60,26 @@
 //        console.log(num);
 
 
+//{
+//    const obj1 = {a : 100, b: 200 , c: "javascript" };
+//    const obj2 = {d : 300, e: 400 , f: "jquery" };
+//
+//    const obj3 = Object.assign(obj1, obj2);
+//
+//    console.log(obj3);
+//}
 {
-    const obj1 = {a : 100, b: 200 , c: "javascript" };
-    const obj2 = {d : 300, e: 400 , f: "jquery" };
+        const obj = {
+                a: 100,
+                b: 200,
+                c:"javascript"
+        }
 
-    const obj3 = Object.assign(obj1, obj2);
-
-    console.log(obj3);
-}
+        console.log(obj.hasOwnProperty("a"));
+        console.log(obj.hasOwnProperty("b"));
+        console.log(obj.hasOwnProperty("c"));
+        console.log(obj.hasOwnProperty("d"));
+}   
     </script>
 </body>
 
