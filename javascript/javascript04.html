@@ -406,153 +406,153 @@
         </footer>
     <!-- // footer -->
 
-    <script>
-        // 01. if문
-        {
-            // true : true, "문자열" , 1, 2, "1", "2", []
-            // false : false, 0, null, undefinde ""(빈문자열)
-
-            if(0){
-              document.write("실행되었습니다.(true)");  
-            } else {
-                document.write("실행되었습니다.(false)");
-            }
-        }
-
-        // 02. 다중 if 문
-        {
-            const num = 100;
-            
-            if(num == 90){
-                document.write("실행되었습니다.(num = 90)");
-            } else if(num == 95){
-                document.write("실행되었습니다.(num = 95)");
-            } else if(num == 100){
-                document.write ("실행되었습니다. (num = 100)");
-            } else if(num == 105){
-                document.write("실행되었습니다. (num = 105)");
-            } else {
-                document.write("실행되었습니다.");
-            }
-        }
-
-        // 03. 중첩 if문
-        {
-            const num = 100;
-
-            if(num == 100){
-                document.write("실행되었습니다.1");
-                if(num == 100){
-                    document.write("실행되었습니다.2");
-                    if(num == 100){
-                        document.write("실행되었습니다.3");
-                    }
-                }
-            } else {
-            document.write("실행되었습니다.4")
-            }
-        }
-
-        // 04. if 문 생략 & 삼항 연산자
-        {
-            const num = 100;
-
-            // if(num == 100) {
-            //     document.write("실행되었습니다.(true)");
-            // } 
-
-            if(num == 100) document.write("실행되었습니다.(true)");
-
-            // if(num == 100) {
-            //     document.write("실행되었습니다.(true)");
-            // } else {
-            //     document.write("실행되었습니다.(false)");
-            // }
-
-            if(num == 100) document.write("실행되었습니다.(true)");
-            else document.write("실행되었습니다.(false)");
-
-            // 삼항 연산자(조건식 연산자)           // 더 많이 사용됨.
-
-            (num == 100) ? document.write("true") : document.write("false");
-        }
-
-        // 05. switch문
-        {
-            const num = 100;
-
-            switch(num){
-                case 90:
-                    document.write("실행되었습니다.(90)");
-                    break;
-                case 95:
-                    document.write("실행되었습니다.(95)");
-                    break;
-                case 100:
-                    document.write("실행되었습니다.(100)");
-                    break;
-                case 105:
-                    document.write("실행되었습니다.(105)");
-                    break;
-                default:
-                    document.write("실행되었습니다.");
-            }
-        }
-
-        // 06. while 문                 //죽은문법
-        {
-            // 1-10까지 출력하는 for()
-            for( let i=1; i<10; i++){
-                document.write(i);
-            }
-
-            let num = 1;
-            while(num<=10){
-                document.write(num);
-                num++;
-            }
-        }
-
-        // 07. do while문                //죽은문법
-        {
-            let num = 1;
-            do {
-                document.write(num);
-                num++;
-            } while(num<=10);
-        }
-
-        // 08. for문 
-        {
-            for( let i=1; i<10; i++){
-                document.write(i);
-            };
-        }
-
-        // 09. break 문
-        {
-            // 1부터 50까지 짝수만
-            for(let i=1; i<10; i+=2){
-                document.write(i);
-                if( i == 5 ){
-                    break;
-                }
-                document.write(i);
-            }
-        }
-        // 10. continue 문
-        {
-            // 1부터 50까지 짝수만
-            for(let i=1; i<10; i+=2){
-                document.write(i);
-                if( i == 5 ){
-                    continue;
-                }
-                document.write(i);
-            }
-        }
-        
-    </script>
+    //<script>
+    //    // 01. if문
+    //    {
+    //        // true : true, "문자열" , 1, 2, "1", "2", []
+    //        // false : false, 0, null, undefinde ""(빈문자열)
+//
+    //        if(0){
+    //          document.write("실행되었습니다.(true)");  
+    //        } else {
+    //            document.write("실행되었습니다.(false)");
+    //        }
+    //    }
+//
+    //    // 02. 다중 if 문
+    //    {
+    //        const num = 100;
+    //        
+    //        if(num == 90){
+    //            document.write("실행되었습니다.(num = 90)");
+    //        } else if(num == 95){
+    //            document.write("실행되었습니다.(num = 95)");
+    //        } else if(num == 100){
+    //            document.write ("실행되었습니다. (num = 100)");
+    //        } else if(num == 105){
+    //            document.write("실행되었습니다. (num = 105)");
+    //        } else {
+    //            document.write("실행되었습니다.");
+    //        }
+    //    }
+//
+    //    // 03. 중첩 if문
+    //    {
+    //        const num = 100;
+//
+    //        if(num == 100){
+    //            document.write("실행되었습니다.1");
+    //            if(num == 100){
+    //                document.write("실행되었습니다.2");
+    //                if(num == 100){
+    //                    document.write("실행되었습니다.3");
+    //                }
+    //            }
+    //        } else {
+    //        document.write("실행되었습니다.4")
+    //        }
+    //    }
+//
+    //    // 04. if 문 생략 & 삼항 연산자
+    //    {
+    //        const num = 100;
+//
+    //        // if(num == 100) {
+    //        //     document.write("실행되었습니다.(true)");
+    //        // } 
+//
+    //        if(num == 100) document.write("실행되었습니다.(true)");
+//
+    //        // if(num == 100) {
+    //        //     document.write("실행되었습니다.(true)");
+    //        // } else {
+    //        //     document.write("실행되었습니다.(false)");
+    //        // }
+//
+    //        if(num == 100) document.write("실행되었습니다.(true)");
+    //        else document.write("실행되었습니다.(false)");
+//
+    //        // 삼항 연산자(조건식 연산자)           // 더 많이 사용됨.
+//
+    //        (num == 100) ? document.write("true") : document.write("false");
+    //    }
+//
+    //    // 05. switch문
+    //    {
+    //        const num = 100;
+//
+    //        switch(num){
+    //            case 90:
+    //                document.write("실행되었습니다.(90)");
+    //                break;
+    //            case 95:
+    //                document.write("실행되었습니다.(95)");
+    //                break;
+    //            case 100:
+    //                document.write("실행되었습니다.(100)");
+    //                break;
+    //            case 105:
+    //                document.write("실행되었습니다.(105)");
+    //                break;
+    //            default:
+    //                document.write("실행되었습니다.");
+    //        }
+    //    }
+//
+    //    // 06. while 문                 //죽은문법
+    //    {
+    //        // 1-10까지 출력하는 for()
+    //        for( let i=1; i<10; i++){
+    //            document.write(i);
+    //        }
+//
+    //        let num = 1;
+    //        while(num<=10){
+    //            document.write(num);
+    //            num++;
+    //        }
+    //    }
+//
+    //    // 07. do while문                //죽은문법
+    //    {
+    //        let num = 1;
+    //        do {
+    //            document.write(num);
+    //            num++;
+    //        } while(num<=10);
+    //    }
+//
+    //    // 08. for문 
+    //    {
+    //        for( let i=1; i<10; i++){
+    //            document.write(i);
+    //        };
+    //    }
+//
+    //    // 09. break 문
+    //    {
+    //        // 1부터 50까지 짝수만
+    //        for(let i=1; i<10; i+=2){
+    //            document.write(i);
+    //            if( i == 5 ){
+    //                break;
+    //            }
+    //            document.write(i);
+    //        }
+    //    }
+    //    // 10. continue 문
+    //    {
+    //        // 1부터 50까지 짝수만
+    //        for(let i=1; i<10; i+=2){
+    //            document.write(i);
+    //            if( i == 5 ){
+    //                continue;
+    //            }
+    //            document.write(i);
+    //        }
+    //    }
+    //    
+    //</script>
     </div>
      <script src="../assets/js/prism.js">
 </script>
