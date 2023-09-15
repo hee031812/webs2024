@@ -31,18 +31,18 @@ li {
 #header nav ul li a {
     display: inline-block;
     text-decoration: none;
-    color:#043003;
-    border: 1px solid #043003;
+    color:#032b03;
+    border: 1px solid #032b03;
     padding: 10px 20px;
     margin-bottom: 5px;
     font-family: "nanumSquareNeo";
 }
 #header nav ul li.active a {
-    background-color: #043003;
+    background-color: #032b03;
     color: #ffffff;
 }
 #header nav ul li a:hover {
-    background-color: #043003;
+    background-color: #032b03;
     color: #ffffffc1;
 }
 #main {
@@ -65,7 +65,7 @@ li {
 /*main__menu*/
 .main__menu {
     padding: 40px;
-    border-bottom: 1px dashed #84a39171;
+    border-bottom: 1px dashed #9ec4ae55;
 }
 .main__menu ul {
     margin-bottom: 10px;
@@ -91,7 +91,7 @@ li {
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #58746f3a;
+    background-color: #8fd0a064;
     transition: all 0.3s;
     border-radius: 30px;
 }
