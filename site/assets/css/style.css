@@ -434,10 +434,10 @@
 }
 @media(max-width: 800px){
     .use__img > div {
-        widows: 100%;
+        width: 100%;
     }
 }
-}
+
 
 
 
