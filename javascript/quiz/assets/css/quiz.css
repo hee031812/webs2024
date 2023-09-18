@@ -466,6 +466,24 @@ cursor: pointer;
     background-color: #412E91;
     transform: rotate(45deg);
 }
+.quiz__check {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #412E91;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.quiz__chec:hover {
+    background-color: #8a6596;
+    border: 1px dashed transparent;
+    color: #412E91;
+}
 /* footer */
 #footer {
     text-align: center;

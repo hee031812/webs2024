@@ -46,16 +46,16 @@
     <main id="main">
         <div class="main__menu">
             <ul>
-                <li><a href="#">01. if문  </a></li>
-                <li><a href="#">02. 다중 if문 </a></li>
-                <li><a href="#">03. 중첩 if문 </a></li>
-                <li><a href="#">04. if 생략</a></li>
-                <li><a href="#">05. switch문</a></li>
-                <li><a href="#">06. while문</a></li>
-                <li><a href="#">07. do while문</a></li>
-                <li><a href="#">08. for문</a></li>
-                <li><a href="#">09. break문</a></li>
-                <li><a href="#">10. continue문</a></li>
+                <li><a href="#s01">01. <strong>Math.random()</strong>  : 랜덤값 반환(0~1 사이의 난수 값은 변환 ) : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.round()</strong>  : 반올림 : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.floor()</strong>  : 버림 : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.ceil()</strong>: 올림 : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.max()</strong>  : 가장큰 값 : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.min()</strong>  : 가장 작은 값 : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.abs()</strong>  : 절대값 : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.trunc()</strong>  : 값의 정수 부분만 : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.PI()</strong>  : 원의 둘레에 대한 지름의 비율()을 나타내며 약 3.1459... : 반환 (숫자)</a></li>
+                <li><a href="#s01">02. <strong>Math.sqrt()</strong>  : 값의 제곱근을 반환 : 반환 (숫자)</a></li>
             </ul>
         </div>
     </main>
@@ -64,9 +64,15 @@
         <footer id="footer">
             <a href="mailto:hee031812@gmail.com">hee031812@gmail.com</a>
         </footer>
-    <!-- // header -->
+    <!-- // footer -->
 
     </div>
-
+    <!-- script -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+        const j = Math.random(Math.random() * 4);
+        console.log(j)
+    </script>
 </body>
 </html>
