@@ -3,86 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈 에펙트 01</title>
+    <title>슬라이드 이펙트</title>
 
-    <link rel="stylesheet" href="assets/css/quiz.css">
-    <link rel="stylesheet" href="assets/css/ani.css">
-    <link rel="stylesheet" href="assets/css/slider.css">
-    <link rel="stylesheet" href="../assets/css/default.min.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="../../assets/css/default.min.css">
+    <link href="https://webfontworld.github.io/NanumBarunGothic/NanumBarunGothic.css" rel="stylesheet">
+
+    <style>
+        /* slider */
+        .slider__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 450px;
+        }
+        .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .slider::before {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background: 0,0,0,0.4;
+            color: #fff;
+            padding: 5px 10px;
+        }
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(1) {z-index: 5;}
+        .slider:nth-child(1) {z-index: 4;}
+        .slider:nth-child(1) {z-index: 3;}
+        .slider:nth-child(1) {z-index: 2;}
+        .slider:nth-child(1) {z-index: 1;}
+
+        
+    </style>
 </head>
-<body>
+<body class="img01">
     <header id="header">
-        <h1>
-            <a href="../index.html">Quiz</a>
-        </h1>
-        <nav>
-            <ul>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
-                <li><a href="quizEffect03.html">3</a></li>
-                <li><a href="quizEffect04.html">4</a></li>
-                <li><a href="quizEffect05.html">5</a></li>
-                <li><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect100.html">7</a></li>
-            </ul>
-        </nav>
+        <h1>javascript Slider Effect01</h1>
+        <p>슬라이드 이펙트 - 트랜지션 효과</p>
+        <ul>
+            <li><a href="slider01.html">1</a></li>
+            <li><a href="slider02.html">2</a></li>
+            <li><a href="slider03.html">3</a></li>
+            <li><a href="slider04.html">4</a></li>
+            <li><a href="slider05.html">5</a></li>
+            <li><a href="slider06.html">6</a></li>
+        </ul>
     </header>
-    <!-- //header -->
-    
+
     <main id="main">
-        <div class="quiz__wrap">
-            <div class="quiz">
-                <div class="quiz__header">
-                    <span class="quiz__date"></span>
-                    <span class="quiz__type"></span>
-                </div>
-                <div class="quiz__main">
-                    <div class="quiz__question">
-                        <em></em>.
-                        <span></span>
-                    </div>
-                    <div class="quiz__animation">
-                        <div class="wrapper">
-                            <div class="card-container">
-                                <div class="dog">
-                                    <div class="head">
-                                        <div class="ears"></div>
-                                        <div class="face"></div>
-                                        <div class="eyes">
-                                            <div class="teardrop"></div>
-                                        </div>
-                                        <div class="nose"></div>
-                                        <div class="mouth">
-                                        <div class="tongue"></div>
-                                        </div>
-                                        <div class="chin"></div>
-                                    </div>
-                                    <div class="body">
-                                        <div class="tail"></div>
-                                        <div class="legs"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="quiz__input">
-                        <input type="text" placeholder="정답을 입력해주세요!">
-                    </div>
-                    <div class="quiz__answer">
-                       
-                    </div>
-                    <div class="quiz__desc">
-                        
-                    </div>
-                </div>
-                <div class="quiz__footer">
-                    <button class="quiz__confirm">정답확인하기</button>
-                </div>
+        <div class="slider__wrap">
+            <div class="slider__img">
+                <div class="slider"><img src="img/img01-min.jpg" alt="이미지1"></div>
+                <div class="slider"><img src="img/img02-min.jpg" alt="이미지2"></div>
+                <div class="slider"><img src="img/img03-min.jpg" alt="이미지3"></div>
+                <div class="slider"><img src="img/img04-min.jpg" alt="이미지4"></div>
+                <div class="slider"><img src="img/img05-min.jpg" alt="이미지5"></div>
             </div>
         </div>
     </main>
-    <!-- //main -->
-    <footer id="footer">
+
+    <footer>
         <div class="modal__wrap">
             <div class="modal__btn">소스보기</div>
             <div class="modal__cont">
@@ -178,59 +173,51 @@
                 </div>
             </div>
         </div>
-        <a href="mailto:hee031812@gmail.com">hee031812@gmail.com</a>
     </footer>
-    <!-- //footer -->
+
     <script src="../../assets/js/highlight.min.js"></script>
     <script src="js/common.js"></script>
 
+
+<!-- javascript -->
+    <!-- <script>
+        window.onload = function(){
+            let currentIndex = 0;       //현재 이미지
+            const slider = document.querySelectorAll(".slider");        //모든 이미지를 변수에 저장
+            slider.forEach(img => img.style.opacity = "0");             // 모든 이미지를 투명하게
+            slider[0].style.opacity = "1" ;                             //첫번째 이미지만 보이도록 설정 
+
+
+            setInterval(() => {    
+                let nextIndex = (currentIndex +1) % slider.length        // 0 1 2 3 4 0 1 2 3 4
+
+                slider[currentIndex].style.opacity = "0";                // 첫번째 이미지가 사라짐
+                slider[nextIndex].style.opacity = "1";                   // 두번째 이미지가 나타남
+                slider.forEach(img => img.style.transition = "all 1s");  // 이미지 애니메이션 추가
+
+                currentIndex = nextIndex;                                // 두번째 인덱스 값을 현 인덱스 값에 저장.
+            }, 3000);                                                    //1000이 1초
+        }
+    </script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        // 문제 정보
-        const infoDate = "2021년 10월";
-        const infoType = "정보처리 기능사";
-        const infoNum = "1";
-        const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만개의 연산을 수행한다는 의미의 단위는?";
-        const infoAnswer = "MIPS";
-        const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000의 연산을 수행하는 것을 의미합니다.";
+        $(function(){
+            let currentIndex = 0;   // 현재 이미지
 
-        // 선택자
-        const quizWrap = document.querySelector(".quiz__wrap");
-        const quizDate = quizWrap.querySelector(".quiz__date");
-        const quizType = quizWrap.querySelector(".quiz__type");
-        const quizNum = quizWrap.querySelector(".quiz__question em");
-        const quizQuestion = quizWrap.querySelector(".quiz__question span");
-        const quizAnswer = quizWrap.querySelector(".quiz__answer");
-        const quizDesc = quizWrap.querySelector(".quiz__desc");
-        const quizConfirm = quizWrap.querySelector(".quiz__confirm");
-        const quizInput = quizWrap.querySelector(".quiz__input input");
-        const quizAnimation = quizWrap.querySelector(".quiz__animation");
+            setInterval(function(){             //3초에 한번씩 실행.
+                let nextIndex = (currentIndex +1) % 5;
 
-        //문제출력
-        quizDate.innerText = infoDate;
-        quizType.innerText = infoType;
-        quizNum.innerText = infoNum;
-        quizQuestion.innerText = infoQuestion;
-        quizAnswer.innerText = infoAnswer;
-        quizDesc.innerText = infoDesc;
+                $(".slider").eq(currentIndex).fadeOut(1200);        // 첫번째 이미지 나타남
+                $(".slider").eq(nextIndex).fadeIn(1200);            // 두번째 이미지 나타남
 
-        //정답 해설 숨기기
-        quizAnswer.classList.add("none");
-        quizDesc.classList.add("none");
+                currentIndex = nextIndex;
 
-       //정답 확인하기
-       quizConfirm.addEventListener("click", () => {
-            const userAnswer = quizInput.value;
-            if(infoAnswer == userAnswer){
-                quizAnimation.classList.add("like");
-            } else {
-                quizAnimation.classList.add("dislike");
-            }
-            quizAnswer.classList.remove("none");
-            quizDesc.classList.remove("none");
-            quizConfirm.classList.add("none");
-            quizInput.classList.add("none");
+            }, 3000);
         });
 
+
     </script>
+    <!-- jquery -->
 </body>
 </html>
