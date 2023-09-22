@@ -18,47 +18,33 @@
             align-items: center;
             justify-content: center;
         }
-        .slider__img {
-            position: relative;
+        .slider__img {      /*이미지가 보이는 영역*/ 
+            width: 800px;
+            height: 450px;
+            overflow: hidden;
+            
+        }
+        .slider__inner {    /* 이미지가 움직이는 영역*/
+            display: flex;
+            flex-wrap: wrap;
+            width: 4800px;
+            height: 450px;
+        }
+        .slider {           /*개별덕인 이미지 */
             width: 800px;
             height: 450px;
         }
-        .slider {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        .slider::before {
-            position: absolute;
-            left: 5px;
-            top: 5px;
-            background: 0,0,0,0.4;
-            color: #fff;
-            padding: 5px 10px;
-        }
-        .slider:nth-child(1)::before {content: '이미지1';}
-        .slider:nth-child(1)::before {content: '이미지1';}
-        .slider:nth-child(1)::before {content: '이미지1';}
-        .slider:nth-child(1)::before {content: '이미지1';}
-        .slider:nth-child(1)::before {content: '이미지1';}
-        .slider:nth-child(1)::before {content: '이미지1';}
-        .slider:nth-child(1) {z-index: 5;}
-        .slider:nth-child(1) {z-index: 4;}
-        .slider:nth-child(1) {z-index: 3;}
-        .slider:nth-child(1) {z-index: 2;}
-        .slider:nth-child(1) {z-index: 1;}
-
         
     </style>
 </head>
-<body class="img01">
+<body class="img03">
     <header id="header">
-        <h1>javascript Slider Effect01</h1>
-        <p>슬라이드 이펙트 - 트랜지션 효과</p>
+        <h1>javascript Slider Effect03</h1>
+        <p>슬라이드 이펙트 - 좌로 움직이기 (연속적으로)</p>
         <ul>
-            <li class="active"><a href="slider01.html">1</a></li>
+            <li><a href="slider01.html">1</a></li>
             <li><a href="slider02.html">2</a></li>
-            <li><a href="slider03.html">3</a></li>
+            <li class="active"><a href="slider03.html">3</a></li>
             <li><a href="slider04.html">4</a></li>
             <li><a href="slider05.html">5</a></li>
             <li><a href="slider06.html">6</a></li>
@@ -68,11 +54,13 @@
     <main id="main">
         <div class="slider__wrap">
             <div class="slider__img">
-                <div class="slider"><img src="img/img01-min.jpg" alt="이미지1"></div>
-                <div class="slider"><img src="img/img02-min.jpg" alt="이미지2"></div>
-                <div class="slider"><img src="img/img03-min.jpg" alt="이미지3"></div>
-                <div class="slider"><img src="img/img04-min.jpg" alt="이미지4"></div>
-                <div class="slider"><img src="img/img05-min.jpg" alt="이미지5"></div>
+               <div class="slider__inner">
+                    <div class="slider s1"><img src="img/img05-min.jpg" alt="이미지1"></div>
+                    <div class="slider s2"><img src="img/img06-min.jpg" alt="이미지2"></div>
+                    <div class="slider s3"><img src="img/img07-min.jpg" alt="이미지3"></div>
+                    <div class="slider s4"><img src="img/img08-min.jpg" alt="이미지4"></div>
+                    <div class="slider s5"><img src="img/img09-min.jpg" alt="이미지5"></div>
+               </div>
             </div>
         </div>
     </main>
@@ -137,57 +125,43 @@
                     </div>
                     <div class="cont">
                         <div class="active">javascript
-<pre><code class="language-js">{
-    const greeting = '   Hello world!   ';
+<pre><code class="language-js">
+// 선택자
+const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = sliderWrap.querySelector(".slider__img");         // 보여지는 영역
+const sliderInner = sliderWrap.querySelector(".slider__inner");     // 움직이는영역
+const slider = sliderWrap.querySelectorAll(".slider");              // 개별이미지
 
-    console.log(greeting);
-    // Expected output: "   Hello world!   ";
+// 변수설정
+let currentIndex = 0;                                               // 현재이미지
+let sliderCount = slider.length;                                    // 이미지갯수
+let sliderInterval = 2000;                                          // 이미지 변경 간격 시간
+let sliderWidth = slider[0].offsetWidth;                            // 이미지 가로 값
+let sliderClone = sliderInner.firstElementChild.cloneNode(true);    // 첫번째 이미지를 복사
 
-    console.log(greeting.trim());
-    // Expected output: "Hello world!";
-}</code></pre>
-                    </div>
-                    <div>jquery
-<pre><code class="language-js">$(function(){
-    let currentIndex = 0;   // 현재 이미지
+// 복사한 이미지를 마지막에 붙여넣기
+sliderInner.appendChild(sliderClone);
 
-    setInterval(function(){             //3초에 한번씩 실행.
-        let nextIndex = (currentIndex +1) % 5;
+function sliderEffect (){
+    currentIndex++;
 
-        $(".slider").eq(currentIndex).fadeOut(1200);        // 첫번째 이미지 나타남
-        $(".slider").eq(nextIndex).fadeIn(1200);            // 두번째 이미지 나타남
+    sliderInner.style.transition = "all 0.6s ease-in";
+    sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";
 
-        currentIndex = nextIndex;
-
-    }, 3000);
-});</code></pre>
-                    </div>
-                        <div>css{
-    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-
-    arr.forEach(function(el){
-        console.log(el);
-    });
-
-    arr.forEach(function(el, index){            //번호 뽑아주기 (index)
-        console.log(index);
-    });
-
-    arr.forEach(function(el, index, array){     //배열 뽑아주기 (index)
-        console.log(array);
-    });
-
-    // 약식 표현
-    arr.forEach((el) => {                       //화살표 함수
-        console.log(el);
-    });
-
-    arr.forEach(el => {                         //() 생략
-        console.log(el);
-    });
-    
-    arr.forEach(el => console.log(el));         //return 생략
+    // 마지막 이미지가 위치 했을 때
+    if(currentIndex == sliderCount){
+        setTimeout(() => {
+    sliderInner.style.transition = "0s";                //모든애니메이션 끄고
+    sliderInner.style.transform = "translateX(0px)";    // 처리하기
+        }, 700)
+        currentIndex = 0;
+    }
 }
+setInterval(sliderEffect, sliderInterval)
+
+</code></pre>
+                    </div>
+                        <div>css
 </div>
                     </div>
                 </div>
@@ -203,47 +177,99 @@
 
     <script src="../../assets/js/highlight.min.js"></script>
     <script src="js/common.js"></script>
-
-
-<!-- javascript -->
-    <!-- <script>
-        window.onload = function(){
-            let currentIndex = 0;       //현재 이미지
-            const slider = document.querySelectorAll(".slider");        //모든 이미지를 변수에 저장
-            slider.forEach(img => img.style.opacity = "0");             // 모든 이미지를 투명하게
-            slider[0].style.opacity = "1" ;                             //첫번째 이미지만 보이도록 설정 
-
-
-            setInterval(() => {    
-                let nextIndex = (currentIndex +1) % slider.length        // 0 1 2 3 4 0 1 2 3 4
-
-                slider[currentIndex].style.opacity = "0";                // 첫번째 이미지가 사라짐
-                slider[nextIndex].style.opacity = "1";                   // 두번째 이미지가 나타남
-                slider.forEach(img => img.style.transition = "all 1s");  // 이미지 애니메이션 추가
-
-                currentIndex = nextIndex;                                // 두번째 인덱스 값을 현 인덱스 값에 저장.
-            }, 3000);                                                    //1000이 1초
-        }
-    </script> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-        $(function(){
-            let currentIndex = 0;   // 현재 이미지
-
-            setInterval(function(){             //3초에 한번씩 실행.
-                let nextIndex = (currentIndex +1) % 5;
-
-                $(".slider").eq(currentIndex).fadeOut(1200);        // 첫번째 이미지 나타남
-                $(".slider").eq(nextIndex).fadeIn(1200);            // 두번째 이미지 나타남
-
-                currentIndex = nextIndex;
-
-            }, 3000);
-        });
-
-
-    </script>
+    <!-- javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- gsap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <!-- jquery -->
+
+
+    <script>
+        // 선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");         // 보여지는 영역
+        const sliderInner = sliderWrap.querySelector(".slider__inner");     // 움직이는영역
+        const slider = sliderWrap.querySelectorAll(".slider");              // 개별이미지
+
+        // 변수설정
+        let currentIndex = 0;                                               // 현재이미지
+        let sliderCount = slider.length;                                    // 이미지갯수
+        let sliderInterval = 2000;                                          // 이미지 변경 간격 시간
+        let sliderWidth = slider[0].offsetWidth;                            // 이미지 가로 값
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);    // 첫번째 이미지를 복사
+
+        // javascript
+        // 복사한 이미지를 마지막에 붙여넣기
+        sliderInner.appendChild(sliderClone);
+
+        function sliderEffect (){
+            currentIndex++;
+
+            sliderInner.style.transition = "all 0.6s ease-in";
+            sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";
+
+            // 마지막 이미지가 위치 했을 때
+            if(currentIndex == sliderCount){
+                setTimeout(() => {
+            sliderInner.style.transition = "0s";                //모든애니메이션 끄고
+            sliderInner.style.transform = "translateX(0px)";    // 처리하기
+                }, 700)
+                currentIndex = 0;
+            }
+        }
+        setInterval(sliderEffect, sliderInterval)
+
+        // /// gasp
+        // // 복사한 이미지 마지막에 붙여넣기
+        // sliderInner.appendChild(sliderClone);
+        // function sliderEffect (){
+        //     currentIndex++;
+            
+        //     gsap.to(sliderInner, {
+        //         x: -sliderWidth * currentIndex,
+        //         druation: 0.6,
+        //         ease: "power2.out"
+        //     });
+
+
+        //     if(currentIndex === sliderCount){
+        //         setTimeout(() => {
+        //             gsap.set(sliderInner, {x:0});           // css 셋팅가능.
+        //             currentIndex = 0
+        //         }, 700);
+        //     }
+
+        // }
+        // setInterval(sliderEffect, sliderInterval);
+
+        //jequry
+        // 복사한 이미지를 마지막에 붙여넣기
+        $(".slider__inner").append(sliderClone);
+
+        function sliderEffect (){
+            currentIndex++;
+
+            $(".slider__inner").css({
+                "transition":"all 0.6s" ,
+                "transform": "translateX(-"+ sliderWidth * currentIndex +"px)"
+            })
+
+            if(currentIndex == sliderCount){
+                setTimeout(() => {
+                    $(".slider__inner").css ({
+                        "transition":"0s",
+                        "transform": "translateX(0px)"
+                    });
+                }, 700);
+                currentIndex = 0;
+            }
+        }
+        setInterval(sliderEffect, sliderInterval);
+    </script>
+    
+
+
+
 </body>
 </html>
