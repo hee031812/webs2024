@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.Quiz2</title>
+
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    
+
+</head>
+<body>
+    <header id="header">
+        <h1>
+            <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+        </h1>
+
+    </header>
+    <!-- // header -->
+
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="quiz__timer"></div>
+        <div class="timer"> <div class="timer-bar"></div> </div>
+    </footer>
+    <!-- //footer -->
+    
+    
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        
+        // 문제 정보
+        const quizInfo = [
+            {
+                infoQuestion : "assets/img/lv3/lv3-1.png",
+                infoAnswer : "윈터"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-2.png",
+                infoAnswer : "안재홍"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-4.png",
+                infoAnswer : "키썸"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-5.png",
+                infoAnswer : "아이린"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-6.png",
+                infoAnswer : "쯔위"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-7.png",
+                infoAnswer : "나선욱"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-8.png",
+                infoAnswer : "하석진"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-9.png",
+                infoAnswer : "인순이"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-10pnpg",
+                infoAnswer : "문상훈"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-11.png",
+                infoAnswer : "이동건"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-12.png",
+                infoAnswer : "이정현"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-13.png",
+                infoAnswer : "아리아나그란데"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-14.png",
+                infoAnswer : "문가영"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-15.png",
+                infoAnswer : "이경영"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-16.png",
+                infoAnswer : "김영철"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-17.png",
+                infoAnswer : "로버트 다우니 주니어"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-18.png",
+                infoAnswer : "검정치마"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-19.png",
+                infoAnswer : "정유미"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-20.png",
+                infoAnswer : "김대명"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-21.png",
+                infoAnswer : "공명"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-22.png",
+                infoAnswer : "강태오"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-23.png",
+                infoAnswer : "이박사"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-24.png",
+                infoAnswer : "홍록기"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-25.png",
+                infoAnswer : "조진세"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-26.png",
+                infoAnswer : "표인봉"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-27.png",
+                infoAnswer : "조니뎁"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-28.png",
+                infoAnswer : "키"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-29.png",
+                infoAnswer : "한석규"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-30.png",
+                infoAnswer : "민지"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-31.png",
+                infoAnswer : "비비"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-32.png",
+                infoAnswer : "황"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-33.png",
+                infoAnswer : "문채원"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-34.png",
+                infoAnswer : "유진"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-35.png",
+                infoAnswer : "뷔"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-36.png",
+                infoAnswer : "이적"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-37.png",
+                infoAnswer : "코트쿤스트"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-38.png",
+                infoAnswer : "남주혁"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-39.png",
+                infoAnswer : "장윤주"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-40.png",
+                infoAnswer : "잔나비"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-41.png",
+                infoAnswer : "프라이머리"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-42.png",
+                infoAnswer : "정해인"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-43.png",
+                infoAnswer : "한혜진"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-44.png",
+                infoAnswer : "이동국"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-45.png",
+                infoAnswer : "조이"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-46.png",
+                infoAnswer : "클링턴"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-47.png",
+                infoAnswer : "황재성"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-48.png",
+                infoAnswer : "차은우"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv3-49.png",
+                infoAnswer : "하현우"
+            },
+            {
+                infoQuestion : "assets/img/lv3/lv-50.png",
+                infoAnswer : "팝핀현준"
+            },
+// --------------50개
+        ];
+
+
+        let currentIndex = 0;       // 현재 문제 변수 값 (현재 풀고 있는 문제)
+
+        // 문제 출력
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+                <div class="quiz">
+                    <div class="quiz__header"></div>
+                    <div class="quiz__main">
+                        <div class="quiz__question">
+                            <img src="${quizInfo[index].infoQuestion}">
+                        </div>
+                        <div class="quiz__answer none">
+                        </div>
+                    </div>
+                    <div class="quiz__footer">
+                        <div class="quiz__input">
+                            <input type="text" placeholder="정답을 입력해주세요!">
+                        </div>
+                        <button class="quiz__confirm">
+                            정답
+                        </button>
+                        <button class="quiz__next none">
+                            다음 문제
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            quizWrap.innerHTML = quizWrapTag;
+
+            // 선택자
+            const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+            const quizNext = quizWrap.querySelector(".quiz__next");
+           
+
+
+            // 정답 확인 버튼
+            quizConfirm.addEventListener("click", () => {
+                checkAnswer();
+                const quizInput2 = document.querySelector(".quiz__input");
+                quizInput2.classList.add("none");
+                quizConfirm.classList.add("none");      // 정답 버튼 숨김
+                quizNext.classList.remove("none");      // 다음 버튼 추가
+            });
+
+            // 다음 문제 버튼
+            quizNext.addEventListener("click", () => {
+                if(currentIndex < quizInfo.length -1){
+                    quizNext.classList.add("none");         // 다음 버튼 숨김
+                    quizConfirm.classList.remove("none");   // 정답 버튼 추가
+                    currentIndex++;                         // 퀴즈 번호 추가
+                    updateQuiz(currentIndex);               // 퀴즈 반영
+                } else {
+                    alert("퀴즈가 종료되었습니다.");
+                }
+            });
+        }
+
+        // 사용자가 클릭한 정답
+           
+        // 정답 확인
+        const checkAnswer = () => {         
+            const quizInput = document.querySelector(".quiz__input input");   
+            const userAnswer = quizInput.value;  
+            const correctAnswer = quizInfo[currentIndex].infoAnswer;       // 정답지의 정답
+            const quizElement = quizWrap.querySelector(".quiz");
+            const descElement = quizWrap.querySelector(".quiz__desc");
+            const answerElement = quizWrap.querySelector(".quiz__answer");
+            
+            
+
+            if(userAnswer === correctAnswer){
+                quizElement.classList.add("good");
+            } else {
+                quizElement.classList.add("bad");
+                answerElement.classList.remove("none");
+            }
+        }
+            
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);
+        });
+
+    </script>   
+</body>
+</html>

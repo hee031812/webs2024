@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: "nanumSquareNeo";
     font-weight: 300;
@@ -58,7 +57,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "nanumSquareNeo";
+    font-family: 'nanumSquareNeo';
     box-sizing: border-box;
     font-size: 16px;
 }
@@ -71,22 +70,23 @@ a {
 }
 
 body {
-    background-image: url(../img/bg01-min.jpg);
+    background-image: url(../img/bg02.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
 }
-body::after {
-    /* content: '';
+body::after { 
+    content: '';
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0,0,0,0.3);
     position: absolute;
     left: 0;
     top: 0;
-    z-index: -1; */
-}
+    z-index: -1; 
+} 
+
 /* common */
 .none {
     display: none !important;
@@ -116,15 +116,15 @@ body::after {
     display: inline-block;
     width: 35px;
     height: 35px;
-    border: 1px solid #acabab;
+    border: 1px solid #fff;
     text-align: center;
     box-shadow: 1px 1px 0px #fff;
     line-height: 1;
     color: #fff;
 }
 #header nav li.active a {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #fff;
+    color: #000;
 }
 
 /* main */
@@ -189,7 +189,6 @@ body::after {
     transform: rotate(-45deg);
     z-index: 100;
 }
-
 .quiz__header {
     margin-bottom: 20px;
     color: #696969;
@@ -204,10 +203,9 @@ body::after {
 }
 .quiz__main {}
 .quiz__question {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: 400;
+    margin-bottom: 10px;
     line-height: 1.5;
+    font-size: 20px;
 }
 .quiz__question em {
     font-size: 24px;
@@ -241,6 +239,7 @@ body::after {
     margin: -1px;
     overflow: hidden;
 }
+
 .quiz__choice label span {
     position: relative;
     display: flex;
@@ -250,14 +249,13 @@ body::after {
     margin-bottom: 10px;
     border-radius: 3px;
     font-size: 16px;
+    line-height: 1.5;
     font-weight: 400;
-    line-height: 1.4;
     cursor: pointer;
-    
 }
-.quiz__choice label span:hover {
+.quiz__choice label:hover {
     border-color: #412E91;
-    color: #493b7e;
+    color: #412E91;
     box-shadow: 1px 1px 5px #73689c;
 }
 .quiz__choice label span::before {
@@ -266,18 +264,18 @@ body::after {
     height: 24px;
     border-radius: 50%;
     flex-shrink: 0;
-    box-shadow: inset 0 0 0 4px #412E91;
+    box-shadow: inset 0 0 0 4px #412e91;
     margin-right: 15px;
     transition: all 0.3s;
 }
 .quiz__choice label input:checked + span::before {
-    box-shadow: inset 0 0 0 9px #412E91;;
-} 
+    box-shadow: inset 0 0 0 9px #412e91;
+}
 .quiz__choice label input:checked + span {
     border-color: #412E91;
-    color: #493b7e;
-    box-shadow: 1px 1px 5px #d4d2db;
-    background-color: hsla(250, 23%, 95%, 0.527);
+    color: #412E91;
+    box-shadow: 1px 1px 5px #422e9160;
+    background-color: #e9e4ff60;
 }
 .quiz__choice .choice {
     border: 1px solid #eee;
@@ -285,15 +283,14 @@ body::after {
     margin-bottom: 5px;
     font-size: 16px;
     line-height: 1.5;
-    transition:  border-color 0.3s, background-color 0.3s;
+    transition: border-color 0.3s, background-color 0.3;
     border-radius: 3px;
     color: #666;
-
 }
 .quiz__choice .choice:hover {
-border-color: #412E91;
-background-color: #d7d1d6;
-cursor: pointer;
+    border-color: #9378ff;
+    background-color: #f6f4ff;
+    cursor: pointer;
 }
 .quiz__choice .choice.correct {
     position: relative;
@@ -303,53 +300,54 @@ cursor: pointer;
     padding-right: 57px;
 }
 .quiz__choice .choice.correct::after {
-    content: ' ';
-    width: 20px;
-    height: 20px;
+    content: '';
+    width: 14px;
+    height: 14px;
     border: 6px solid #412E91;
     border-radius: 50%;
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-}
 
+}
 .quiz__choice .choice.incorrect {
     position: relative;
-    border-color: #9a0606;
-    box-shadow: 1px 1px 5px #422e9160;
-    background-color: #e9e4ff60;
-    color: #412E91;
+    border-color: #912e3a;
+    box-shadow: 1px 1px 5px #912e3a19;
+    background-color: #912e3a19;
+    color: #912e3a;
     padding-right: 57px;
 }
 .quiz__choice .choice.incorrect::before {
-    content: ' ';
+    content: '';
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 28px;
     height: 6px;
-    background-color: #9a0606;
-    border-radius: 5px;
+    background-color: #912e3a;
+    border-radius: 4px;
     transform: rotate(45deg);
     margin-top: -3px;
+
 }
 .quiz__choice .choice.incorrect::after {
-    content: ' ';
+    content: '';
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 28px;
     height: 6px;
-    background-color: #9a0606;
+    background-color: #912e3a;
     border-radius: 4px;
     transform: rotate(-45deg);
     margin-top: -3px;
 }
-.quiz__animation {
-    border: 1px solid #bdb5e4;
+.quiz__animation{
+    border: 1px dashed #b8a8ff;
     margin-bottom: 10px;
 }
 .quiz__input {
@@ -367,10 +365,11 @@ cursor: pointer;
     padding: 20px;
     margin-bottom: 10px;
     line-height: 1.5;
+    text-align: center;
     color: #666;
 }
 .quiz__answer::before {
-    content: " 👍정답 : ";
+    content: "😀정답 : ";
 }
 .quiz__desc {
     border: 1px solid #eaeaea;
@@ -380,7 +379,7 @@ cursor: pointer;
     color: #666;
 }
 .quiz__desc::before {
-    content: "😯설명: ";
+    content: "😄설명 : ";
 }
 .quiz__footer {}
 .quiz__confirm {
@@ -392,11 +391,11 @@ cursor: pointer;
     border: 0;
     width: 100%;
     transition: all 0.3s;
-    border: 1PX dashed transparent;
+    border: 1px dashed transparent;
     border-radius: 3px;
 }
 .quiz__confirm:hover {
-    border: 1px dashed #412E91;
+    border: 1px dashed #412e91;
     background-color: transparent;
     color: #412E91;
     cursor: pointer;
@@ -411,11 +410,10 @@ cursor: pointer;
     transition: all 0.3s;
 }
 .quiz__next:hover {
-    background-color: #eeecf8;
+    background-color: #f5f2ff;
 }
-
 .quiz__indicator {
-    border-color: #f5f2ff;
+    background-color: #f5f2ff;
     padding: 20px;
     border-radius: 3px;
     margin-bottom: 20px;
@@ -432,20 +430,20 @@ cursor: pointer;
     position: relative;
 }
 .quiz__indicator span.correct::before {
-    content: ' ';
+    content: '';
     width: 8px;
     height: 8px;
     border: 4px solid #fff;
-    position: absolute;
     border-radius: 50%;
-    left: 1;
+    position: absolute;
+    left: 1px;
     top: 1px;
 }
 .quiz__indicator span.incorrect {
     position: relative;
 }
 .quiz__indicator span.incorrect::before {
-    content: ' ';
+    content: '';
     position: absolute;
     left: 2px;
     top: 7px;
@@ -456,7 +454,7 @@ cursor: pointer;
     transform: rotate(-45deg);
 }
 .quiz__indicator span.incorrect::after {
-    content: ' ';
+    content: '';
     position: absolute;
     left: 2px;
     top: 7px;
@@ -472,18 +470,22 @@ cursor: pointer;
     bottom: 20px;
     width: 100px;
     height: 100px;
+    line-height: 100px;
     background-color: #412E91;
     color: #fff;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s;
-}
-.quiz__chec:hover {
-    background-color: #8a6596;
     border: 1px dashed transparent;
+}
+.quiz__check:hover {
+    background-color: #fff;
+    border: 1px dashed #412E91;
     color: #412E91;
 }
+
+
 /* footer */
 #footer {
     text-align: center;
@@ -492,6 +494,7 @@ cursor: pointer;
 #footer a {
     display: block;
     color: #fff;
+    padding: 40px;
 }
 #footer a:hover {
     text-decoration: underline;
@@ -558,5 +561,4 @@ cursor: pointer;
     .quiz__confirm {
         padding: 13px;
     }
-
-}
+ }
