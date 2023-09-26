@@ -98,9 +98,20 @@ body {
     display: block;
     width: 500px;
     height: 70px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    margin-top: 60px;
     border-radius: 10px;
     background-color: #fff;
+    box-shadow: 5px 5px 5px #00000020;
+    border: 0;
+}
+#btn .lv:hover {
+    display: block;
+    width: 500px;
+    height: 70px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background-color: #e6faf4;
     box-shadow: 5px 5px 5px #00000020;
     border: 0;
 }

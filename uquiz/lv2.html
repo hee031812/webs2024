@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.Quiz2</title>
+
+    <link rel="stylesheet" href="assets/css/quiz.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1>
+                <a href="index.html"><img src="assets/img/logo2.png" alt=""></a>
+            </h1>
+
+        </header>
+        <!-- // header -->
+
+        <main id="main">
+            <div class="quiz__wrap"></div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="quiz__timer timer"></div>
+            <div class="modal__wrap">
+                <div class="modal__cont">
+                    <div class="modal__box">
+                        <div class="title">
+                            <span class="dot" aria-label="true"></span>
+                            <div class="taps">
+                                <div class="active">
+                                    RESULT
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cont">
+                        </div>
+                    </div>
+                    <div class="modal__close">
+                        <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- //footer -->
+    
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizTimer = document.querySelector(".quiz__timer");
+        const modal = document.querySelector(".modal__wrap");
+        let correct = 0;
+
+        //모달 선택자
+        const modalBtn = document.querySelector(".modal__btn");
+        const modalClose = document.querySelector(".modal__close");
+        const modalCont = document.querySelector(".modal__cont");
+        const cont = document.querySelector(".cont");
+        
+        //모달 창 닫기
+        modalClose.addEventListener("click", () => {
+            modalCont.classList.add("hide");
+            modalCont.classList.remove("show");
+            window.location.href = "index.html";
+        })
+
+        // 문제 정보
+        const quizInfo = [
+            {
+                infoQuestion : 'assets/img/lv2/lv2-1.jpg',
+                infoAnswer : "서현진"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-2.jpg',
+                infoAnswer : "서장훈"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-3.jpg',
+                infoAnswer : "다현"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-4.jpg',
+                infoAnswer : "유세윤"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-5.jpg',
+                infoAnswer : "윈터"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-6.jpg',
+                infoAnswer : "뷔"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-7.jpg',
+                infoAnswer : "이장우"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-8.jpg',
+                infoAnswer : "임시완"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-9.jpg',
+                infoAnswer : "케이윌"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-10.jpg',
+                infoAnswer : "크러쉬"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-11.jpg',
+                infoAnswer : "티파니"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-12.jpg',
+                infoAnswer : "소지섭"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-13.jpg',
+                infoAnswer : "한효주"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-14.jpg',
+                infoAnswer : "정국"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-15.jpg',
+                infoAnswer : "이수현"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-16.jpg',
+                infoAnswer : "박지성"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-17.jpg',
+                infoAnswer : "김동현"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-18.jpg',
+                infoAnswer : "장범준"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-19.jpg',
+                infoAnswer : "신민아"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-20.jpg',
+                infoAnswer : "김영철"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-21.jpg',
+                infoAnswer : "고현정"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-22.jpg',
+                infoAnswer : "나훈아"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-23.jpg',
+                infoAnswer : "버락오바마"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-24.jpg',
+                infoAnswer : "공효진"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-25.jpg',
+                infoAnswer : "장기하"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-26.jpg',
+                infoAnswer : "효린"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-27.jpg',
+                infoAnswer : "류준열"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-28.jpg',
+                infoAnswer : "그레이"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-29.jpg',
+                infoAnswer : "톰크루즈"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-30.jpg',
+                infoAnswer : "강다니엘"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-31.jpg',
+                infoAnswer : "이민호"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-32.jpg',
+                infoAnswer : "신세경"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-33.jpg',
+                infoAnswer : "사이먼도미닉"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-34.jpg',
+                infoAnswer : "유연석"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-35.jpg',
+                infoAnswer : "진"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-36.jpg',
+                infoAnswer : "이영표"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-37.jpg',
+                infoAnswer : "지코"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-38.jpg',
+                infoAnswer : "조규현"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-39.jpg',
+                infoAnswer : "조세호"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-40.jpg',
+                infoAnswer : "안소희"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-41.jpg',
+                infoAnswer : "김태리"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-42.jpg',
+                infoAnswer : "기리보이"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-43.jpg',
+                infoAnswer : "서강준"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-44.jpg',
+                infoAnswer : "강남"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-45.jpg',
+                infoAnswer : "이찬혁"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-46.jpg',
+                infoAnswer : "수영"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-47.jpg',
+                infoAnswer : "강민경"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-48.jpg',
+                infoAnswer : "붐"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-49.jpg',
+                infoAnswer : "장원영"
+            },
+            {
+                infoQuestion : 'assets/img/lv2/lv2-50.jpg',
+                infoAnswer : "에릭"
+            },
+        ];
+
+
+        // 문제 배열을 섞는 함수
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // 배열 요소를 스왑
+            }
+        }
+
+        // 문제 배열 섞기
+        shuffleArray(quizInfo);
+        
+        let currentIndex = 0;       // 현재 문제 변수 값 (현재 풀고 있는 문제)
+
+        // 문제 출력
+        const updateQuiz = (index) => {
+            let quizWrapTag = `
+                <div class="quiz">
+                    <div class="quiz__header"></div>
+                    <div class="quiz__main">
+                        <div class="quiz__question">
+                            <img src="${quizInfo[index].infoQuestion}">
+                        </div>
+                        <div class="quiz__answer none">
+                            ${quizInfo[index].infoAnswer}
+                        </div>
+                    </div>
+                    <div class="quiz__footer">
+                        <div class="quiz__input">
+                            <input type="text" placeholder="정답을 입력해주세요.">
+                        </div>
+                        <button class="quiz__confirm">
+                            정답
+                        </button>
+                        <button class="quiz__next none">
+                            다음
+                        </button>
+                    </div>
+                </div>
+            `;
+            quizWrap.innerHTML = quizWrapTag;
+
+            // 선택자
+            const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+            const quizNext = quizWrap.querySelector(".quiz__next"); 
+
+            // 정답 확인 버튼
+            quizConfirm.addEventListener("click", () => {
+                checkAnswer();
+                const quizInput2 = document.querySelector(".quiz__input");
+                quizInput2.classList.add("none");
+                quizConfirm.classList.add("none");      // 정답 버튼 숨김
+                quizNext.classList.remove("none");      // 다음 버튼 추가
+            });
+
+            // 다음 문제 버튼
+            quizNext.addEventListener("click", () => {
+                if(currentIndex < quizInfo.length -1){
+                    quizNext.classList.add("none");         // 다음 버튼 숨김
+                    quizConfirm.classList.remove("none");   // 정답 버튼 추가
+                    currentIndex++;                         // 퀴즈 번호 추가
+                    updateQuiz(currentIndex);               // 퀴즈 반영
+                } else {
+                    alert("퀴즈가 종료되었습니다.");
+                }
+            });
+        }
+
+        // 타이머
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                quizTimer.classList.add("start");
+                
+                seconds = parseInt(timer % 60, 10);
+
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = "남은 시간: " + seconds + "초";
+
+                if (--timer < 0) {
+                    modalCont.classList.add("show");
+                    cont.innerHTML = correct;
+                    timer = duration;
+                    quizTimer.classList.remove("start");
+                    quizTimer.style.display = "none";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var duration = 60000; // 타이머 시간 (초)
+            var display = document.querySelector(".timer");
+            startTimer(duration, display);
+        };
+           
+        // 정답 확인
+        const checkAnswer = () => {         
+            const quizInput = document.querySelector(".quiz__input input");   
+            const userAnswer = quizInput.value;  
+            const correctAnswer = quizInfo[currentIndex].infoAnswer; // 정답지의 정답
+            const quizElement = quizWrap.querySelector(".quiz");
+            const descElement = quizWrap.querySelector(".quiz__desc");
+            const answerElement = quizWrap.querySelector(".quiz__answer");
+            
+
+            if(userAnswer === correctAnswer){
+                quizElement.classList.add("good");
+                correct++;
+            } else {
+                quizElement.classList.add("bad");
+                answerElement.classList.remove("none");
+            }
+        }
+            
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updateQuiz(currentIndex);
+        });
+    </script>   
+</body>
+</html>
