@@ -31,7 +31,6 @@
             line-height: 1.9;
             color: #fff;
             font-weight: 300;
-            z-index: 10000;
         }
         .mouse__text p span {
             color: #e4eb84;
@@ -250,6 +249,65 @@ GSAP
             })
         });
 
+    </script>
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="js/common.js"></script>
+    <!-- javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- gsap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <!-- jquery -->
+    <script>
+        // 선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");         // 보여지는 영역
+        const sliderInner = sliderWrap.querySelector(".slider__inner");     // 움직이는영역
+        const slider = sliderWrap.querySelectorAll(".slider");              // 개별이미지
+    
+        // 변수설정
+    
+        let currentIndex = 0;               // 현재 보이는 이미지
+        let sliderCount = slider.length;    // 이미지 갯수
+        let sliderInterval = 3000;          // 이미지 변경 간격시간
+        
+        // 애니메이션
+        // sliderInner.style.transform = "translateX(-0px)";       // -800 * 0
+        // sliderInner.style.transform = "translateX(-800px)";     // -800 * 1
+        // sliderInner.style.transform = "translateX(-1600px)";    // -800 * 2
+        // sliderInner.style.transform = "translateX(-2400px)";    // -800 * 3
+        // sliderInner.style.transform = "translateX(-3200px)";    // -800 * 4
+    
+        // 자바스크립트
+            // sliderInner.style.transition = "all 0.6s";
+    
+            // setInterval(() => {
+            //     currentIndex = (currentIndex + 1) % sliderCount;
+                
+            //     sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
+            // }, sliderInterval);
+    
+        // gsap
+        // setInterval(() => {
+        //     currentIndex = (currentIndex + 1) % sliderCount;
+            
+        //     gsap.to(sliderInner, {
+        //         x: -800 * currentIndex,
+        //         duration: 1,
+        //         ease: "power4.out"
+        //     });
+        // }, sliderInterval);
+    
+        // jquery
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % sliderCount;
+    
+            $(".slider__inner").css("position", "relative");
+            $(".slider__inner").animate({left: -800 * currentIndex}, 600);
+    
+        }, sliderInterval);
+        
     </script>
 </body>
 </html>
