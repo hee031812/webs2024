@@ -243,6 +243,27 @@ body {
     color: #fff;
     cursor: pointer;
 }
+.quiz__next {
+    background-color: #319073;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: block;
+    border: 0;
+    width: 75px;
+    border-radius: 20px;
+    transition: all 0.3s; 
+    border: 1px solid #319073;
+    height: 75px;
+    position: absolute;
+    bottom: 7px;
+    right: 50%;
+    transform: translateX(222px);
+    z-index: 1000;
+}
+.quiz__next:hover {
+    background-color: #52b998
+}
 .start {
     margin-top: 50px;
     height: 25px;
@@ -272,28 +293,6 @@ body {
     100% {
         background-position: -200% 0;
     }
-}
-
-.quiz__next {
-    background-color: #319073;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    display: block;
-    border: 0;
-    width: 75px;
-    border-radius: 20px;
-    transition: all 0.3s; 
-    border: 1px solid #319073;
-    height: 75px;
-    position: absolute;
-    bottom: 7px;
-    right: 50%;
-    transform: translateX(222px);
-    z-index: 1000;
-}
-.quiz__next:hover {
-    background-color: #52b998
 }
 
 /* footer */
@@ -522,14 +521,54 @@ body {
         background-image: none;
     }
 }
-@media (max-width: 800px){
+/* @media (max-width: 800px){
     .quiz__confirm {
-        right: 53.2%;
+        right: 51.2%;
+    }
+} */
+@media (max-width: 600px){
+    .quiz__confirm {
+        right: 54%;
     }
 }
-@media (max-width: 700px){
+@media (max-width: 500px){
+    .quiz__wrap >.quiz {
+        width: 360px;
+        height: 470px;
+    }
+    .quiz__wrap{
+        width: 360px;
+        height: 470px;
+    }
+    .quiz__input input {
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+    }
+    .quiz__answer {
+        width: 300px;
+        height: 50px;
+        padding-top: 13px;
+        font-size: 20px;
+    }
     .quiz__confirm {
-        right: 53.2%;
+        width: 50px;
+        height: 50px;
+        right: 64%;
+        bottom: 155px;
+        box-sizing: border-box;
+        padding: 0;     
+    }
+    .quiz__next {
+        width: 50px;
+        height: 50px;
+        right: 70%;
+        bottom: 5px;
+        box-sizing: border-box;
+        padding: 0;
+    }
+    #footer{
+        width: 360px;
     }
 }
 @media (max-width: 375px){
@@ -555,11 +594,10 @@ body {
     .quiz__confirm {
         width: 50px;
         height: 50px;
-        right: 72%;
+        right: 73%;
         bottom: 155px;
         box-sizing: border-box;
         padding: 0;     
-
     }
     .quiz__next {
         width: 50px;

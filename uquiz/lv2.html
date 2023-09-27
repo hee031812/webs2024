@@ -69,7 +69,11 @@
         modalClose.addEventListener("click", () => {
             modalCont.classList.add("hide");
             modalCont.classList.remove("show");
-            window.location.href = "index.html";
+            if(correct > 10){
+                window.location.href = "lv2_5.html";
+            } else {
+                window.location.href = "index.html";
+            }
         })
 
         // 문제 정보
@@ -367,7 +371,7 @@
         }
 
         window.onload = function () {
-            var duration = 60000; // 타이머 시간 (초)
+            var duration = 50; // 타이머 시간 (초)
             var display = document.querySelector(".timer");
             startTimer(duration, display);
         };

@@ -72,100 +72,18 @@
             modalCont.classList.add("hide");
             modalCont.classList.remove("show");
             if(correct > 10){
-                window.location.href = "lv1_5.html";
+                window.location.href = "lv2.html";
             } else {
-                window.location.href = "index.html";
+                if(correct > 10){
+                    window.location.href = "lv2.html";
+                } else {
+                    window.location.href = "index.html";
+                }
             }
         })
 
         // 문제 정보
         const quizInfo = [
-            {
-                infoQuestion : 'assets/img/lv1/lv1-1.jpg',
-                infoAnswer : "유재석"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-2.jpg',
-                infoAnswer : "송중기"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-3.jpg',
-                infoAnswer : "싸이"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-4.jpg',
-                infoAnswer : "박보검"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-5.jpg',
-                infoAnswer : "강호동"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-6.jpg',
-                infoAnswer : "수지"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-7.jpg',
-                infoAnswer : "김숙"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-8.jpg',
-                infoAnswer : "마동석"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-9.jpg',
-                infoAnswer : "윤아"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-10.jpg',
-                infoAnswer : "손흥민"
-            },
-            
-
-
-            {
-                infoQuestion : 'assets/img/lv1/lv1-11.jpg',
-                infoAnswer : "윤도현"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-12.jpg',
-                infoAnswer : "나문희"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-13.jpg',
-                infoAnswer : "이강인"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-14.jpg',
-                infoAnswer : "안정환"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-15.jpg',
-                infoAnswer : "나영석"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-16.jpg',
-                infoAnswer : "공유"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-17.jpg',
-                infoAnswer : "박명수"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-18.jpg',
-                infoAnswer : "노홍철"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-19.jpg',
-                infoAnswer : "김구라"
-            },
-            {
-                infoQuestion : 'assets/img/lv1/lv1-20.jpg',
-                infoAnswer : "양세찬"
-            },
-
-
-
             {
                 infoQuestion : 'assets/img/lv1/lv1-21.jpg',
                 infoAnswer : "김희철"
@@ -386,7 +304,7 @@
         }
 
         window.onload = function () {
-            var duration = 60; // 타이머 시간 (초)
+            var duration = 55; // 타이머 시간 (초)
             var display = document.querySelector(".timer");
             startTimer(duration, display);
         };

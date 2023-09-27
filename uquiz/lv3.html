@@ -351,7 +351,7 @@
             setInterval(function () {
                 quizTimer.classList.add("start");
                 
-                seconds = parseInt(timer % 60, 10);
+                seconds = parseInt(timer % 40, 10);
 
                 seconds = seconds < 10 ? "0" + seconds : seconds;
 
@@ -368,7 +368,7 @@
         }
 
         window.onload = function () {
-            var duration = 60; // 타이머 시간 (초)
+            var duration = 40; // 타이머 시간 (초)
             var display = document.querySelector(".timer");
             startTimer(duration, display);
         };
