@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>U.Quiz?</title>
+    <style>
+        @media(max-width: 800px){
+            .quiz__wrap,
+            .quiz__wrap .logo img{
+                width: 90% !important;
+            }
+            .quiz__wrap #btn {
+                width: 100% !important;
+            }
+            .quiz__wrap #btn > button {
+                margin-left : auto;
+                margin-right: auto;
+                width: 70% !important;
+                min-width: 300px !important;
+            }
+        }
+        @media(max-width: 700px){
+            .quiz__wrap #btn > button {
+                font-size: 1rem !important;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
 
     <link rel="stylesheet" href="assets/css/style01.css">
     <!-- <link rel="stylesheet" href="assets/reset.css"> -->
