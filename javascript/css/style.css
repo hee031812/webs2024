@@ -67,6 +67,12 @@ li {
     padding: 40px;
     border-bottom: 1px dashed #9ec4ae55;
 }
+.main__menu h3 {
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #032b03;
+}
 .main__menu ul {
     margin-bottom: 10px;
 }

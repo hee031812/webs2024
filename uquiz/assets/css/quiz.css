@@ -479,7 +479,10 @@ body {
         background-repeat: no-repeat;
     }
 }
-@media(max-width: 1000px){
+@media(max-width: 1650px){
+    
+}
+@media(max-width: 1100px){
     .quiz__wrap >.quiz {
         width: 425px;
         height: 555px;
