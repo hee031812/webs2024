@@ -1,33 +1,146 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>퀴즈연습</title>
+    <title>퀴즈 이펙트I2</title>
     <link rel="stylesheet" href="assets/css/quiz.css">
-    <!-- //CSS -->
+    <link rel="stylesheet" href="assets/css/ani.css">
 </head>
+<body class="fixed">
+    <header id="header">
+        <h1>
+            <a href="../index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li class="active"><a href="quizEffect10.html">10</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
 
-<body>
-<header id="header">
-    <h1>
-        <a href="../index.html">Quiz</a>
-    </h1>
-    <nav>
-        <ul>
-            <li><a href="quizEffect01.html"></a></li>
-        </ul>
-    </nav>
-</header>   
-<!-- //header -->
+    <main id="main">
+        <div class="quiz__wrap"></div>
+    </main>
+    <!-- //header -->
 
-<div id="main">
-    <div class="quiz__Wrap"></div>
-</div>
-<!-- //main -->
+    <footer id="footer">
+        <a href="hee031812@gmail.com">hee031812@gmail.com</a>
+    </footer>
+    <!-- //footer -->
 
-<div id="footer">
-    <a href="mailto:hee031812@gmail.com">hee031812@gmail.com</a>
-</div>
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        // 문제 정보
+        let quizInfo = [];
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz(); // fetchQuiz 함수 호출
+        });
+
+        // 문제 가져오기
+        const fetchQuiz = () => {
+            fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json")
+            .then(res => res.json())
+            .then(items => {
+                quizInfo = items.map((item,index) => {
+                    const formattedQuiz = {
+                        infoDate: "정보처리 " + item.time,
+                        infoQuestion: item.question,
+                        infoAdd: item.question_desc,
+                        infoAnswer: item.correct_answer
+                    }
+                    return formattedQuiz;
+                });
+                updataQuiz(currentIndex); // 첫 번째 문제로 시작
+            })
+        } 
+        fetchQuiz();
+
+        let currentIndex = 0;  // 현재 문제 변수 값(현재 풀고 있는 값)
+
+        const updataQuiz = (index) => {
+            if(quizInfo.length > 0 && index < quizInfo.length) {
+            const formattedQuiz = quizInfo[index]; // 현재 인덱스의 문제 정보 가져오기
+                let quizWrapTag = `
+                    <div class="quiz long">
+                        <div class="quiz__header">
+                            <span class="quiz__date">${formattedQuiz.infoDate}</span>
+                        </div>
+                        <div class="quiz__main">
+                            <div class="quiz__question">
+                                <span>${formattedQuiz.infoQuestion}</span>
+                            </div>
+                            <div class="quiz__add">${formattedQuiz.infoAdd}</div>
+                            <div class="quiz__answer none">${formattedQuiz.infoAnswer}</div>
+                        </div>
+                        <div class="quiz__footer">
+                            <button class="quiz__confirm">정답 확인하기</button>
+                            <button class="quiz__next none">다음 문제</button>
+                        </div>
+                    </div>
+                `;
+
+                quizWrap.innerHTML = quizWrapTag;
+
+                // infoAdd 값이 비어있을 때 숨기기
+                function hiddenAdd(){
+                    const quizAdd = document.querySelector(".quiz__add"); // quiz__add 요소 선택
+
+                    if(formattedQuiz.infoAdd !== null && formattedQuiz.infoAdd !== ""){
+                        // infoAdd가 null이 아니고 빈 문자열("")이 아닌 경우에만 표시
+                        quizAdd.textContent = formattedQuiz.infoAdd;
+                    } else {
+                        // infoAdd가 null이거나 빈 문자열("")인 경우 숨김
+                        quizAdd.classList.add("none");
+                    }
+                }
+                hiddenAdd();
+
+                // 선택자
+                const quizAnswer = quizWrap.querySelector(".quiz__answer");
+                const quizConfirm = quizWrap.querySelector(".quiz__confirm");
+                const quizNext = quizWrap.querySelector(".quiz__next");
+
+                // 정답 확인 버튼
+                quizConfirm.addEventListener("click", () => {
+                    quizAnswer.classList.remove("none");    // 정답 보여주기
+                    quizConfirm.classList.add("none");      // 정답 버튼 삭제
+                    quizNext.classList.remove("none");      // 다음 버튼 추가
+                });
+
+                // 다음 문제 버튼
+                quizNext.addEventListener("click", () => {
+                    if(currentIndex < quizInfo.length - 1){
+                        quizAnswer.classList.add("none");    // 정답 숨기기
+                        quizNext.classList.add("none");         // 다음 버튼 삭제
+                        quizConfirm.classList.remove("none");   // 정답 버튼 추가
+                        currentIndex++;                         // 문제 번호 추가
+                        updataQuiz(currentIndex);               // 다음 문제 출력
+                    } else {
+                        updataQuiz(0);                          // 처음 문제 출력
+                    }
+                });
+            }
+        };
+        
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updataQuiz(currentIndex);
+            hiddenAdd();
+        });
+    </script>
+
 </body>
 </html>
