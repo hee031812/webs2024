@@ -696,3 +696,36 @@ body::after {
     width: 90%;
     cursor: pointer;
 }
+
+/* quiz__1 */
+.quiz__wrap > .long {
+    width: 800px;
+    min-height: 250px;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+.quiz__add {
+    border: 1px solid #eee;
+    padding: 17px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: border-color 0.3s, background-color 0.3s;
+    border-radius: 3px;
+    color: #666;
+}
+.quiz__confirm {
+    background-color: #412E91;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: block;
+    border: 0;
+    width: 100%;
+    transition: all 0.3s;
+    border: 1px dashed transparent;
+    border-radius: 3px;
+}
