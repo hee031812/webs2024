@@ -348,7 +348,7 @@ body {
     border-top-right-radius: 0.5rem;
 }
 
- .modal__box .title .taps {
+.modal__box .title .taps {
     margin: 0 auto;
     height: 100px;
 }
@@ -366,7 +366,7 @@ body {
 }
 .modal__box .cont {
     color: #fff;
-    font-size: 150px;
+    font-size: 50px;
     background-color: #b0e0d1;
     height: 300px;
     overflow-y: hidden;
@@ -382,11 +382,13 @@ body {
     height: 100%;
 }
 .modal__close {
+    width: 100px;
+    font-size: 23px;
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 47.5%;
+    bottom: 28%;
     background-color: #fff;
-    padding: 1rem 1rem 0.8rem 1rem;
+    padding: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
