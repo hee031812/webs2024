@@ -74,10 +74,7 @@ body {
     background-image: url(../img/bg01-min.jpg);
     background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat;
     position: relative;
-
-
 }
 body.fixd {
     background-attachment: fixed;
@@ -135,7 +132,6 @@ body::after {
 
 /* main */
 #main {
-    min-height: 85vh;
 }
 
 /* quiz__wrap */
