@@ -22,7 +22,7 @@
 
 /* container */
 .container {
-    max-width: 1260px;
+    width: 1260px;
     width: 96%;
     margin: 0 auto;
 }
