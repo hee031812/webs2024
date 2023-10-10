@@ -30,7 +30,7 @@
     </header>
 
     <main id="main">
-        <div class="cbt__box none">
+        <div class="cbt__box">
             <h2>기능사 시험</h2>
 
             <select id="cbtSelect1" id="">
@@ -87,16 +87,16 @@
 
         
             <p>
-                당신의 이름은 <input type="text"> 입니다.<br>
-                <em>정보처리 기능사 <r>2006년 2회</r></em> 문제를 선택했습니다.<br>
+                당신의 이름은 <input type="text" class="cbt__select__input"> 입니다.<br>
+                <em class="cbt__select__title">정보처리 기능사 <r>2006년 2회</r></em> 문제를 선택했습니다.<br>
                 시작하겠습니까? <br> 
                 <i>* 총시간은 60분이며 60점이상 맞아야 합격입니다. *<i>
             </p>
-            <button class="cbt__box_start">시작하기</button>
+            <button class="cbt__box__start">시작하기</button>
 
             </div>
         </div>
-        <div class="cbt__wrap" >
+        <div class="cbt__wrap none" >
             <div class="cbt__header">
                 <h1 class="cbt__title"> 2020년 1회 정보처리 기사 기출문제</h1>
                 <div class="cbt__info">
@@ -182,45 +182,64 @@
 
     <script>
 
-       // 문제정보
-       let quizInfo = [];       // 모든 퀴즈 정보
+ // 선택자 
+  // 선택자 
 
-       let quizScore = 0;       // 퀴즈 점수
-       let quizCorrect = 0;     // 퀴즈 맞은 갯수
+        const cbtWrap = document.querySelector(".cbt__wrap");
+        const cbtBox = document.querySelector(".cbt__box");
+        const cbtSelect1 = document.getElementById("cbtSelect1");   
+        const cbtSelect2 = document.getElementById("cbtSelect2");
+        const cbtSelectTitle = document.querySelector(".cbt__select__title");
+        const cbtBoxStart = document.querySelector(".cbt__box__start");
+        const cbtSelectInput = document.querySelector(".cbt__select__input");
 
-        // 문제 가져오기
-        const fetchQuiz = () => {
-            fetch("https://hee031812.github.io/webs2024/json/gineungsaJC2011_05.json")
-                .then(res => res.json())
-                .then(items => {
-                    console.log(items);
-                    quizInfo = items.map((item, index) => {
-                        const formattedQuiz = {
-                            infoDate : "2011년 5회",
-                        }
-                        return formattedQuiz;
-                    });
-                    console.log(quizInfo);
+        // 문제 정보
+        let quizInfo = [];
+
+        let quizScore = 0;  //퀴즈 점수
+        let quizCorrect = 0; // 퀴즈 맞은 갯수
+
+        // 문제 가져오기 
+        const fetchQuiz = (value, text) => {
+            fetch(`https://webstoryboy.github.io/webs2024/json/${value}.json`)
+            .then(res => res.json())
+            .then(items => {
+                console.log(items);
             });
-       }
-
-       const updataQuiz = () => {
-            const quizArray = [];
-            quizInfo.forEach((quiz, number) => {
-                quizArray.push(`
-                    <div class="quiz">
-                        <div class="quiz__header">${quiz.infoDate} ${quiz.infoType}</div>
-                        <!-- //quiz__header -->
-                        </div>
-                    </div>
-                `);
-            });
-            quizWrap.innerHTML = quizArray.join("");
         }
+
+        // 문제 정보
+        const hendleSelectChange = (e) => {
+            let selectValue = e.target.value;
+            let selectText = e.target.options[e.target.selectedIndex].text;
+            console.log(selectValue);
+            cbtSelectTitle.innerHTML = selectText;
+            fetchQuiz(selectValue, selectText);
+        }
+
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
-        fetchQuiz();
-       });
+            fetchQuiz("gineungsaJC2005_02", "정보처리기능사 2005년 2회");
+
+            // 문제 선택
+            cbtSelect1.addEventListener("change", hendleSelectChange);
+            cbtSelect2.addEventListener("change", hendleSelectChange);
+
+            // 시작하기 버튼
+            cbtBoxStart.addEventListener("click", () => {
+                // 이름이 입력 되었는지 확인
+                const playerName = cbtSelectInput.value.trim();
+
+                if(playerName=== ""){
+                    alert("이름을 입력해야 시작할수있습니다.");
+                } else {
+                    alert("제한시간은 60분이며, 확인을 누르면 바로 시작합니다.");
+                    cbtBox.classList.add("none");
+                    cbtWrap.classList.remove("none");
+
+                }
+            });
+        });
  </script>
 </body>
 </html>

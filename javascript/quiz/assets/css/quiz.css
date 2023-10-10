@@ -132,6 +132,7 @@ body::after {
 
 /* main */
 #main {
+    min-height: 100vh;
 }
 
 /* quiz__wrap */
