@@ -809,7 +809,73 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample20 -->
+                <!-- //sample21 -->
+
+                <div id="sample22" class="sample">
+                    <h3>22. 파일 : 서버 데이터 불러오기 : XMLHttpRequest</h3>
+                    <p>이 코드는 객체 분해 (Object Destructuring)를 사용하여 객체의 속성 값을 변수에 할당하고 그 값을 콘솔에 출력하는 작업을 수행합니다.</p>
+<pre><code class="language-js"> {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
+    
+    xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                    var responseData = xhr.responseText;
+                    var jsonData = JSON.parse(responseData);
+
+                    console.log(jsonData);
+            } else if (xhr.readyState === 4) {
+                    console.error("데이터 불러오기 오류: " + xhr.status);
+            }
+    };
+    
+    xhr.send();
+}
+</code></pre>
+                    <p class="desc">객체 분해를 사용하면 객체의 속성 값을 간단하게 추출하여 변수에 할당하거나, 기본값을 설정할 수 있으며, 중첩된 속성에도 접근할 수 있습니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+
+
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample22 -->
+
+                <div id="sample23" class="sample">
+                    <h3>23. 파일 : 서버 데이터 불러오기 : fetch API</h3>
+                    <p>이 코드는 객체 분해 (Object Destructuring)를 사용하여 객체의 속성 값을 변수에 할당하고 그 값을 콘솔에 출력하는 작업을 수행합니다.</p>
+<pre><code class="language-js">{
+    fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
+</code></pre>
+                    <p class="desc">객체 분해를 사용하면 객체의 속성 값을 간단하게 추출하여 변수에 할당하거나, 기본값을 설정할 수 있으며, 중첩된 속성에도 접근할 수 있습니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+
+                                
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample23 -->
+
 
 
                 <footer id="footer">
