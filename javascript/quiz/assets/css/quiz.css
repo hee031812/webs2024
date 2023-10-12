@@ -819,6 +819,15 @@ body::after {
     cursor: pointer;
     margin-top: 10px;
 }
+.cbt__again {
+    background-color: #06350d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
 .cbt__desc {
     border: 1px solid #dee9e0;
     padding: 10px 20px 10px 38px;
