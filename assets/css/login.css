@@ -1,0 +1,127 @@
+#main {
+    width: 100%;
+}
+
+.login__inner {
+    /* background-color: #333; */
+    width: 100%;
+}
+.login__wrap {
+    display: flex;
+    width: 90%;
+    margin: 5%;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #285A5B;
+    border-top: 2px solid #285A5B;
+}
+.images__wrap {
+    background-color: #285A5B;
+    width: 22rem;
+    height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.images__wrap h1 {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+}
+.images__wrap span {
+    background-image: url(../../img/loginimg.png);
+    width: 125px;
+    height: 125px;
+    background-size: cover;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-bottom: 13%;
+}
+.login__box {
+    margin-left: 5%;
+    /* background-color: #ffdede; */
+    width: 30rem;
+    height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login__box h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+.login__box h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+.login__box .joinbtn {
+    font-style: normal;
+    color: #FFB84D;
+    margin-left: 1.2rem;
+}
+.login__box input {
+    width: 353px;
+    padding: 0.5rem;
+    border-bottom: 1px solid #C1C1C1 !important;
+    border: none;
+    color: #353535;
+    font-size: 1rem;
+    margin-top: 3rem;
+}
+.login__find {
+    display: flex;
+    left: 12%;
+    bottom: 30%;
+}
+.login__find a {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    display: block;
+    margin-left: 1rem;
+    color: var(--black400)
+}
+.login__find a.active {
+    text-decoration: underline;
+    text-underline-position: unset;
+}
+.login__btn2 {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+}
+.login__box input {
+    width: 353px;
+    padding: 0.5rem;
+    border-bottom: 1px solid #C1C1C1 !important;
+    border: none;
+    color: #353535;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.images__wrap span {
+    background-image: url(../../assets/img/joinimg.png);
+}
+@media (max-width : 650px) {
+    .images__wrap h1 {
+        font-size: 1rem;
+    }
+    .login__wrap {
+        flex-direction: column;
+    }
+    .images__wrap {
+        width: 100%;
+        height: 50%;
+    }
+    .images__wrap span {
+        margin-bottom: 0;
+    }
+    .login__box {
+        height: 50%;
+    }
+}

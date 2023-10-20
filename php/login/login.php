@@ -24,7 +24,7 @@
                     <fieldset>
                         <legend class="blind">로그인 영역</legend>
                         <div>
-             s               <label for="youEmail" class="required blind">이메일</label>
+                            <label for="youEmail" class="required blind">이메일</label>
                             <input type="email" id="youEmail" name="youEmail" placeholder="이메일" class="input__style" required>
                         </div>
     

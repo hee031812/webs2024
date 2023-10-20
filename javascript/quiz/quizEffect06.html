@@ -34,6 +34,7 @@
                 <li><a href="quizEffect05.html">5</a></li>
                 <li class="active"><a href="quizEffect06.html">6</a></li>
                 <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect10.html">10</a></li>
             </ul>
         </nav>
     </header>
@@ -159,7 +160,7 @@
 
        // 문제 가져오기
        const fetchQuiz = () => {
-            fetch("https://yunyoungsik.github.io/webs2024/json/gineungsaJC2011_05.json")
+            fetch("https://hee031812.github.io/webs2024/json/gineungsaJC2011_05.json")
                 .then(res => res.json())
                 .then(items => {
                     quizInfo = items.map((item, index) => {

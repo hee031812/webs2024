@@ -55,6 +55,9 @@
     font-size: 1.6rem;
     margin-bottom: 1.25rem;
 }
+.intro__text em {
+    color: #b40505;
+}
 .intro__btn {
     margin-top: 20px;
 }
@@ -216,14 +219,27 @@ margin-right: 10px;
 .mt90 {margin-top: 90px !important;}
 .mt100 {margin-top: 100px !important;}
 
+
 .mt0  {margin-right: 0px !important;}
-.mt10 {margin-right: 10px !important;}
-.mt20 {margin-right: 20px !important;}
-.mt30 {margin-right: 30px !important;}
-.mt40 {margin-right: 40px !important;}
-.mt50 {margin-right: 50px !important;}
-.mt60 {margin-right: 60px !important;}
-.mt70 {margin-right: 70px !important;}
-.mt80 {margin-right: 80px !important;}
-.mt90 {margin-right: 90px !important;}
-.mt100 {margin-right: 100px !important;}
+.mr10 {margin-right: 10px !important;}
+.mr20 {margin-right: 20px !important;}
+.mr30 {margin-right: 30px !important;}
+.mr40 {margin-right: 40px !important;}
+.mr50 {margin-right: 50px !important;}
+.mr60 {margin-right: 60px !important;}
+.mr70 {margin-right: 70px !important;}
+.mr80 {margin-right: 80px !important;}
+.mr90 {margin-right: 90px !important;}
+.mr100 {margin-right: 100px !important;}
+
+.mb0  {margin-bottom: 0px !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb50 {margin-bottom: 50px !important;}
+.mb60 {margin-bottom: 60px !important;}
+.mb70 {margin-bottom: 70px !important;}
+.mb80 {margin-bottom: 80px !important;}
+.mb90 {margin-bottom: 90px !important;}
+.mb100 {margin-bottom: 100px !important;}

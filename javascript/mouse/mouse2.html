@@ -208,34 +208,6 @@ jquery
 }, sliderInterval);
     </code></pre>
                         </div>
-                        <div>GSAP
-<pre><code class="language-js">
-GSAP
-// 선택자
-    const sliderWrap = document.querySelector(".slider__wrap");
-    const sliderImg = sliderWrap.querySelector(".slider__img");         // 보여지는 영역
-    const sliderInner = sliderWrap.querySelector(".slider__inner");     // 움직이는영역
-    const slider = sliderWrap.querySelectorAll(".slider");              // 개별이미지
-
-// 변수설정
-
-    let currentIndex = 0;               // 현재 보이는 이미지
-    let sliderCount = slider.length;    // 이미지 갯수
-    let sliderInterval = 3000;          // 이미지 변경 간격시간
-
-// GSAP
-    setInterval(() => {
-         currentIndex = (currentIndex + 1) % sliderCount;
-  
-         gsap.to(sliderInner, {
-             x: -800 * currentIndex,
-             duration: 1,
-             ease: "power4.out"
-         });
-    }, sliderInterval);
-    </code></pre>
-                        </div>
-                    </div>
                 </div>
                 <div class="modal__close">
                     <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
