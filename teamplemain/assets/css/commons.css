@@ -1,0 +1,256 @@
+.container {
+    max-width: 1400px;
+    width: 96%;
+    margin: 0 auto;
+}
+
+/* scroll style */
+.scroll__style::-webkit-scrollbar {
+    width: 10px;
+    background-color: #eaffaf;
+    border: 1px solid #00000034;
+}
+.scroll__style::-webkit-scrollbar-thumb {
+    background-color: #0000003d;
+    border-radius: 1.3rem;
+}
+.scroll__style::-webkit-scrollbar-track {
+    background-color: var(--black500);
+    border-radius: 1.3rem;
+}
+
+/* 버튼 스타일 */
+.btn__style1 {
+    width: 75%;
+    height: 43px;
+    background-color: #285A5B;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.btn__style2 {
+    width: 100px;
+    height: 39px;
+    background-color: #285A5B;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* 헤더 */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #999999;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header__logo {
+    width: 25%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__logo h1 {
+    background-image: url(../img/logo2.jpg);
+    width: 131px;
+    height: 56px;
+}
+.header__nav {
+    width: 50%;
+}
+.header__nav ul {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__nav ul li {
+    padding: 30px;
+}
+.header__nav ul a {}
+.header__search {
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 2rem;
+}
+.header__search input {
+    width: 80%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #F2F1EC;
+    color: #969696;
+    border: none;
+    padding-left: 1.2rem;
+    position: relative;
+}
+.search__zoom {
+    background-image: url(../img/zoom.svg);
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+}
+.header__login {
+    width: 5%;
+    height: 100px;
+    display: flex;
+}
+.login__btn {
+    background-color: #fff;
+    position: relative;
+}
+.login__btn .login__icon {
+    background-image: url(../img/loginicon.svg);
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: -40%;
+    top: 35%;
+}
+
+/* 헤더 미디어 */
+@media(max-width : 1100px) {
+    #header {
+        height: 70px;
+    }
+    .header__search {
+        display: none;
+    }
+    .search__zoom { 
+        display: none !important;
+    }
+    .header__nav ul {
+        font-size: 1rem;
+    }
+    .header__nav ul li {
+        padding: 3%;
+    }
+    .header__login {
+        margin-right: 2rem;
+        height: 66px;
+    }
+}
+@media(max-width : 660px) {
+    .header__logo {
+        display: none;
+    }
+    .header__nav {
+        width: 85%;
+    }
+}
+
+/* ________________footer__inner_____________________ */
+#footer {
+}
+.footer__inner {
+    border-top: 1px solid #999999;
+    margin-top: 1rem;
+    height: 200px;
+}
+.footerwrap {
+    margin : 2rem 2rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.footer__logo {
+    width: 14%;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.footer__logo img {
+    
+    width: 131px;
+    height: 56px;
+}
+.infoBox1, 
+.infoBox3 {
+    width: 22%;
+    font-size: 1rem;
+    text-align: center;
+}
+.infoBox2 {
+    width: 25%;
+    font-size: 1rem;
+    text-align: center;
+}
+.infoBox1 p,
+.infoBox2 p,
+.infoBox3 p {
+    font-size: 0.8rem;
+    color: var(--black400);
+    text-align: center;
+}
+
+.footer__sns {
+    width: 14%;
+}
+.footer__sns h1 {
+    text-align: center;
+}
+.footer__sns img {
+    width: 24px;
+    height: 24px;
+}
+.footer__sns div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width : 1100px) {
+    .infoBox1,
+    .infoBox2,
+    .infoBox3 {
+        font-size: 0.8rem;
+    }
+    .footerwrap {
+        margin: 2rem 0 0 0;
+    }
+    .infoBox1 p,
+    .infoBox2 p,
+    .infoBox3 p {
+        font-size: 0.6rem;
+        margin-top: 1rem;
+    }
+    .footer__logo img {
+        width: 75%;
+        height: 75%;
+    }
+    .footer__sns h1 {
+        font-size: 0.8rem;
+    }
+}
+@media(max-width : 700px) {
+    .footer__inner {
+        height: 125px;
+    }
+    .footer__logo {
+        display: none;
+    }
+    .footer__sns {
+        display: none;
+    }
+    .footerwrap {
+        justify-content: space-between;
+    }
+}
+
