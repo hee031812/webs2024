@@ -59,7 +59,7 @@
     align-items: center;
     background-color: #F5F5F2;
     border-radius: 50px;
-    width: 40%;
+    width: 30%;
     height: 50px;
 }
 .board__nav li {
@@ -110,6 +110,17 @@
     padding: 10px 15px;
     margin-left: -1px;
 }
+
+.board__write {}
+.board__write label {
+    width: 100%;
+    font-size: 1.25rem;
+    margin-top: 10px;
+    display: block;
+}
+.board__write input {
+    margin-bottom: 50px;
+}
 .board__btns {
     display: flex;
     justify-content: right;
@@ -134,49 +145,3 @@
     padding: 30px;
 }
 
-/* boardwrite */
-.write__table {
-    border-top: 2px solid var(--mycolor1);
-    border-bottom: 1px solid #999999;
-}
-.write__table td {
-    padding-left: 5%;
-    font-size: 1.2rem;
-    font-weight: 500;
-    border-bottom: 1px solid #999999;
-}
-.write__table td:first-child {
-    width: 30%;
-}
-.write__table td:last-child {
-    width: 70%;
-}
-.write__table input {
-    background-color: #F5F5F2;
-    width: 80%;
-    height: 50px;
-    border-radius: 1rem;
-    margin: 1rem 0;
-}
-#boardTitle {
-    padding-left: 1.5rem;
-    font-size: 1rem;
-}
-#boardContents {
-    background-color: #F5F5F2;
-    width: 80%;
-    border-radius: 1rem;
-    margin: 1rem 0;
-    padding: 1.5rem;
-    font-size: 1rem;
-}
-.write__btn {
-    background-color: var(--mycolor1);
-    color: var(--white);
-    font-size: 1rem;
-    padding: 1rem;
-    margin: 5px;
-    width: 8rem;
-    font-weight: 500;
-    cursor: pointer;
-}
