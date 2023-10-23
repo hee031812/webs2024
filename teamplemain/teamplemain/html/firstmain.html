@@ -9,6 +9,284 @@
     <!-- css -->
     <link href="https://webfontworld.github.io/vitro/VitroPride.css" rel="stylesheet">
     <!-- font -->
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Bungee+Hairline|Lato:300");
+        html,
+        body {
+        height: 100%;
+        color: white;
+        }
+
+        .main-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 40px;
+        }
+        .main-nav i {
+        font-size: 8px;
+        display: block;
+        margin: 10px;
+        transition: margin 200ms ease;
+        }
+        .main-nav i:hover {
+        color: #ed542c;
+        }
+        .main-nav:hover > i {
+        margin: 15px 12px;
+        }
+
+        .page {
+        height: 100%;
+        background-color: transparent;
+        }
+
+        .main-page-content {
+        background-color: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+        .main-page-content h1 {
+        font-family: "Bungee Hairline";
+        font-size: 80px;
+        line-height: 5.5rem;
+        }
+        .main-page-content h2 {
+        font-family: "Lato";
+        font-size: 25px;
+        letter-spacing: 2px;
+        }
+
+        iframe {
+        position: absolute;
+        top: -100%;
+        }
+
+        .universe {
+        z-index: -10000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: contrast(120%);
+        background-color: black;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        }
+
+        .universe-container {
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 80%);
+        }
+
+        .content {
+        width: inherit;
+        height: inherit;
+        }
+
+        #universe {
+        width: 100%;
+        height: 100%;
+        }
+
+        #footer {
+        position: absolute;
+        bottom: 0px;
+        height: 300px;
+        width: 100%;
+        }
+
+        #scene {
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        margin-left: -800px;
+        z-index: 100000;
+        }
+
+
+        /* scroll */
+        #paparallax__cont {
+            overflow: hidden;
+            font-family: 'VitroPride';
+        }
+        #section7 .parallax__item__text {
+            font-family: 'VitroPride';
+            font-size: 4vw;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #020409;
+            padding: 30px;
+            width: 100%;
+            text-align: center;
+            margin-top: 400px;
+        }
+
+        /* mouse scroll */
+        .mouse__scroll {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            margin-left: 950px;
+        }
+        .container {
+            position: relative;
+            width: 24px;
+            height: 24px;
+        }
+        
+        .chevron {
+            position: absolute;
+            width: 28px;
+            height: 8px;
+            opacity: 0;
+            transform: scale3d(0.5, 0.5, 0.5);
+            animation: move 3s ease-out infinite;
+        }
+        
+        .chevron:first-child {
+            animation: move 3s ease-out 1s infinite;
+        }
+        
+        .chevron:nth-child(2) {
+            animation: move 3s ease-out 2s infinite;
+        }
+        
+        .chevron:before,
+        .chevron:after {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 51%;
+            background: #fff;
+        }
+        
+        .chevron:before {
+            left: 0;
+            transform: skew(0deg, 30deg);
+        }
+        
+        .chevron:after {
+            right: 0;
+            width: 50%;
+            transform: skew(0deg, -30deg);
+        }
+        
+        @keyframes move {
+            25% {
+            opacity: 1;
+        
+            }
+            33% {
+            opacity: 1;
+            transform: translateY(30px);
+            }
+            67% {
+            opacity: 1;
+            transform: translateY(40px);
+            }
+            100% {
+            opacity: 0;
+            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+            }
+        }
+        
+        .text {
+            display: block;
+            margin-top: 75px;
+            margin-left: -30px;
+            font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+            white-space: nowrap;
+            opacity: .25;
+            animation: pulse 2s linear alternate infinite;
+        }
+        
+        @keyframes pulse {
+            to {
+            opacity: 1;
+            }
+        }
+
+        /* click me */
+        .clickMe {
+            width: 500px;
+            height: 300px;
+            align-items: center;
+            margin: 0 auto;
+            padding-left: 200px;
+        }
+        .clickMe span {
+            color: #fff;
+        }
+        .cta {
+            position: relative;
+            margin: auto;
+            padding: 19px 22px;
+            transition: all 0.2s ease;
+        }
+        .cta:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.5);
+            width: 56px;
+            height: 56px;
+            transition: all 0.3s ease;
+        }
+        .clickMe span {
+            position: relative;
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 900;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            vertical-align: middle;
+            color: #fff;
+        }
+        .cta span:hover{
+            color: #000;
+        }
+        .cta svg {
+            position: relative;
+            top: 0;
+            margin-left: 10px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: #111;
+            stroke-width: 2;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+        .cta:hover:before {
+            width: 100%;
+            background: #ffffff;
+        }
+        .cta:hover svg {
+            transform: translateX(0);
+        }
+        .cta:active {
+            transform: scale(0.96);
+            color: #000;
+        }
+    </style>
 </head>
 
 <body>
