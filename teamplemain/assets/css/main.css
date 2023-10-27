@@ -59,6 +59,7 @@ body {
     align-items: center;
     flex-direction: column;
     transform: translate(-50%, -50%);
+    font-family: var(--main-nexon);
 }
 
 .slider__text h2 {
@@ -180,14 +181,17 @@ body {
     max-width: var(--width-container);
     width: 100%;
 }
-
-@media(min-width: 540px) {
+@media(min-width: 200px) {
     .card-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .intro__text h3 {
+        font-size: 1.5rem;
     }
 }
 
-@media(min-width: 960px) {
+@media(min-width: 600px) {
     .card-grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -336,7 +340,7 @@ body {
     }
 
     .company__title h3 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .company__img img {

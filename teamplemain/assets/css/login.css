@@ -42,24 +42,32 @@
 }
 .login__box {
     margin-left: 5%;
-    /* background-color: #ffdede; */
-    width: 30rem;
-    height: 620px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* background-color: #ffdede; */
+    width: 30rem;
+    height: 620px;
 }
 .login__box h2 {
     font-size: 1.8rem;
     font-weight: 400;
-    padding: 1rem;
-    margin-bottom: 2rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 .login__box h3 {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    margin-bottom: 2rem;
+    /* margin-bottom: 1rem; */
+    text-align: center;
+}
+.login__box em {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 .login__box .joinbtn {
     font-style: normal;
@@ -131,21 +139,23 @@
     align-items: center;
 }
 .agree__box .scroll {
-    width: 350px;
-    height: 150px;
+    width: 100%;
+    height: 12.5rem;
     background-color: #e8eeee;
     overflow-y: scroll;
-    padding: 15px;
+    padding: 25px;
     white-space: pre-line;
+    font-size: 0.8rem;
     font-family: var(--main-gmark);
 }
 .agree__box .check {
     margin-top: 10px;  
-    margin-bottom: 50px; 
+    margin-bottom: 30px; 
 }
 .agree__box .check label {
     position: relative;
     padding-left: 30px;
+    font-size: 0.8rem;
 }
 .agree__box .check input {
     position: absolute;

@@ -8,7 +8,7 @@
     
 <style>
     .login__box {
-        justify-content: space-around;
+        height: auto;
     }
     .login__box h3 {
         font-size: 1.6rem;
@@ -20,14 +20,41 @@
     .login__findid {
         display: flex;
         justify-content: space-around;
-        width: 70%;
-        font-size: 3rem;
-        color: #285A5B;
+        font-size: 2rem;
+        width: 50%;
+        margin: 1rem 0;
         border-bottom: 2px solid #999999;
+    }
+    .login__btn2 {
+        margin: 1rem 0;
+    }
+    .login__findid em {
+        font-size: 1.5rem;
+        color: #285A5B;
+    }
+    .login__idbox {
+        width: 100%;
+        height: 17.5rem;
+        padding: 2rem 3rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #edebe7;
     }
     @media (max-width:1100px){
         .login__inner {
             margin-top: 50px;
+        }
+    }
+    @media (max-width:660px){
+        .login__idbox {
+            margin-bottom: 3rem;
+            width: 80%;
+        }
+        .login__box {
+            margin-left: 0;
         }
     }
     
@@ -97,9 +124,11 @@
                 </div>
                 <div class="login__box">
                     <h2>아이디찾기 성공</h2>
-                    <h3>당신의 아이디는</h3>
-                    <div class="login__findid">"<em>abcdabcd</em>"</div>
-                    <button class="login__btn2 btn__style1"><a href="login.html">로 그 인</a></button>
+                    <div class="login__idbox">
+                        <h3>당신의 아이디는</h3>
+                        <div class="login__findid">"<em>abcdabcd</em>"</div>
+                        <button class="login__btn2 btn__style1"><a href="login.html">로 그 인</a></button>
+                    </div>
                 </div>
             </div>
         </div>

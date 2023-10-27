@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    
-<style>
-    .images__wrap span {
-        background-image: url(../../assets/img/idfindimg.png);
-    }
-</style>
-</head>
-<body>
-    <header id="header">
+<header id="header">
         <a class="header__logo" href="main.html">
             <h1></h1>
         </a>
@@ -64,68 +49,3 @@
             </button>
         </div>
     </header>
-
-    <main id="main">
-        <div class="login__inner container">
-            <div class="login__wrap">
-                <div class="images__wrap">
-                    <span></span>
-                    <h1>환경오염은 거리두기<br>
-                        환경보호는 곁에두기</h1>
-                </div>
-                <div class="login__box">
-                    <h2>아이디찾기</h2>
-                    <h3>비밀번호가 기억나지 않는다면?<a href="joinpass.html" class="joinbtn">비밀번호 찾기</a></h3>
-                    <em>아이디를 찾기위한 정보를 입력하세요.</em>
-                    <label for="youEmail">
-                        <input type="email" placeholder="이메일">
-                    </label>
-                    <label for="youBrith">
-                        <input type="text" placeholder="생년월일">
-                    </label>
-                    <label for="youPhone">
-                        <input type="password" placeholder="휴대폰번호">
-                    </label>
-                    
-                    <button class="login__btn2 btn__style1" ><a href="idfindcom.html">아 이 디 찾 기</a></button>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <footer id="footer" role="contentinfo">
-        <div class="footer__inner">
-            <div class="footerwrap">
-                <ul>
-                    <li><img src="../../assets/img/logo2.jpg" alt="sitelogo"></li>
-                    <li>
-                        <h2>CUSTOMER CENTER</h2>
-                        <p>전화보다 빠른 궁금증 해결</p>
-                    </li>
-                    <li>
-                        <h2>NOTICE +</h2>
-                        <p>종량제 봉투 가격 인상 공지<br>
-                            2025 대기업 탄소 저감 실적 의무화 실시예정</p>
-                    </li>
-                    <li>
-                        <h2>about 분리배출</h2>
-                        <p>주소 : 서울특별시 구로구 구로동 237-14<br>
-                            통신판매업 신고 : 2015-서울구로-1525</p>
-                    </li>
-                    <li>
-                        <div class="footer__sns">
-                            <h1>SOCIAL</h1>
-                            <div>
-                                <img src="../../assets/img/Facebook.png" alt="Facebook">
-                                <img src="../../assets/img/Instagram.png" alt="Instagram">
-                                <img src="../../assets/img/messanger.png" alt="messanger">
-                                <img src="../../assets/img/Whatsapp.png" alt="Whatsapp">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>

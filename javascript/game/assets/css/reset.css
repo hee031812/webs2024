@@ -1,4 +1,10 @@
-/* 여백 초기화 */
+body {
+    -webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+}
+
+/* ì—¬ë°± ì´ˆê¸°í™” */
 body,
 div,
 dl,
@@ -30,66 +36,62 @@ blockquote {
     padding: 0;
 }
 
-/* box-sizing 초기화 */
+/* box-sizing ì´ˆê¸°í™” */
 *, *::after, *::before {
     box-sizing: border-box;
 }
 
-/* 폰트 초기화 */
+/* í°íŠ¸ ì´ˆê¸°í™” */
 body,
 button,
 input,
 select,
 table,
 textarea {
-    font-family: var(--main-nexon), var(--main-nanum), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
-}
-body {
-    max-width: 1920px;
-    padding-top: 100px;
+    font-family: var(--main-nanum), var(--main-gmark), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', 'ë§‘ì€ ê³ ë”•', 'dotum', 'ë‹ì›€';
 }
 
-/* 링크 초기화 */
+/* ë§í¬ ì´ˆê¸°í™” */
 a {
     text-decoration: none;
     color: var(--color__black);
 }
 
-/* 목록 초기화 */
+/* ëª©ë¡ ì´ˆê¸°í™” */
 li, ol, ul {
     list-style: none;
 }
 
-/* 제목 초기화 */
+/* ì œëª© ì´ˆê¸°í™” */
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-size: 1rem;
 }
 
-/* 폰트 스타일 */
+/* í°íŠ¸ ìŠ¤íƒ€ì¼ */
 em, address {
     font-style: normal;
 }
 
-/* 이미지 초기화 */
+/* ì´ë¯¸ì§€ ì´ˆê¸°í™” */
 img {
     width: 100%;
     vertical-align: top;
 }
 
-/* 보더 초기화 */
+/* ë³´ë” ì´ˆê¸°í™” */
 img, fieldset, button {
     border: 0;
 }
 
-/* 테이블 초기화 */
+
 table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
 }
 
-/* 클리어픽스 */
+
 .clearfix::before,
 .clearfix::after {
     content: '';
@@ -100,7 +102,7 @@ table {
     clear: both;
 }
 
-/* 블라인드 효과 */
+
 .blind {
     position: absolute;
     clip: rect(0,0,0,0);
@@ -110,17 +112,11 @@ table {
     overflow: hidden;
 }
 
-/* ir 효과 */
+
 .ir {
     display: block;
     overflow: hidden;
     font-size: 0;
     line-height: 0;
     text-indent: -9999px;
-}
-
-@media(max-width : 1100px ){
-    body {
-        padding-top: 70px;
-    }
 }

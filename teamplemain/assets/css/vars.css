@@ -1,6 +1,8 @@
 :root {
+    --main-nexon : "NexonLv1Gothic";
     --main-nanum : "NanumSquareNeo";
-    --main-gmark : "GmarketSans";
+    /* --main-gmark : "GmarketSans"; */
+    
 
     --primary-color : #eeeeee;
 
