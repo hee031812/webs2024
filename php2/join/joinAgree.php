@@ -3,46 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입 페이지</title>
+    <title>PHP 블로그 만들기</title>
+
     <!-- CSS -->
-    <link rel="stylesheet" href="../asset/css/style.css">
+    <?php include "../include/head.php"?>
 </head>
 <body class="gray">
-    <div id="skip">
-        <a href="#header">헤더 영역 바로가기</a>
-        <a href="#main">콘텐츠 영역 바로가기</a>
-        <a href="#footer">푸터 영역 바로가기</a>
-    </div>
+    <?php include "../include/skip.php"?>
+    <!-- //skip -->
 
-    <header id="header" role="banner">
-        <div class="header__inner bmStyle container">
-            <div class="left">
-                <a href="/">
-                    <span class="blind">
-                        메인으로
-                    </span>
-                </a>
-            </div>
-            <div class="logo">
-                <a href="main.html">Developer Blog</a>
-            </div>
-            <div class="right">
-                <ul>
-                    <li><a href="join.html">이용약관</a></li>
-                </ul>
-            </div>
-        </div>
-        <nav class="nav__inner">
-            <ul>
-                <li><a href="join.html">회원가입</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="board.html">게시판</a></li>
-                <li><a href="board.html">블로그</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "../include/header.php"?>
     <!-- //header -->
 
+    <main id="main" role="main">
     <main id="main" role="main">
         <div class="intro__inner bmStyle container">
             <div class="intro__img">
@@ -96,9 +69,9 @@
 
                     </div>
                     <div class="check">
-                        <label for="agreeCheck2">
+                        <label for="agreeCheck1">
                             블로그 개인정보 수집 및 이용에 동의합니다.
-                            <input type="checkbox" name="agreeCheck2" id="agreeCheck2">
+                            <input type="checkbox" name="agreeCheck1" id="agreeCheck1">
                             <span class="indicator"></span>
                         </label>
                     </div>
@@ -125,18 +98,28 @@
                         </label>
                     </div>
                 </div>
-                <button type="submit" id="submitBtn" class="btn__style mt100">동의하기</button>
+                <button id="agreeButton" class="btn__style"  >동의하기</button>
             </div>
         </section>
     </main>
     <!-- //main -->
+    </main>
+    <!-- //main -->
 
-    <footer id="footer" role="contentinfo">
-        <div class="footer__inner container btStyle">
-            <div>Copyright 2023 heejin</div>
-            <div>blog by khj</div>
-        </div>
-    </footer>
+    <?php include "../include/footer.php"?>
     <!-- //footer -->
+
+    <script>
+        document.getElementById("agreeButton").addEventListener("click", () => {
+            const agreeCheck1 = document.getElementById("agreeCheck1");
+            const agreeCheck2 = document.getElementById("agreeCheck2");
+
+            if(agreeCheck1.checked && agreeCheck2.checked){
+                window.location.href = "joinInsert.php";
+            } else {
+                alert("이용약관 및 개인정보 취급방침을 동의해주세요!");
+            }
+        });
+    </script>
 </body>
 </html>

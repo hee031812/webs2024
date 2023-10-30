@@ -5,34 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP 02</title>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link href="https://webfontworld.github.io/BMHannaAir/BMHannaAir.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/goodchoice/Jalnan.css" rel="stylesheet">
     <style>
-        body {
-            padding: 10%;
-            font-family: var(--main-gmark);
-            font-size: 1.6rem;
+        * {
+            font-family: 'BMHannaAir';
+            font-size: 25px;
         }
-        a:hover {
+        body {
+            text-align: center;
+            background-color: rgb(240, 231, 219);
+        }
+        #wrap {
+            padding: 5%;
+        }
+        #wrap span {
+            font-family: 'BMHannaAir';
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        #wrap h1 {
+            font-size: 30px;
+            font-family: 'BMHannaAir';
+            margin-bottom: 20px;
+        }
+        .menuWrap {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .menu > li {
+            display: inline-block;
+            border: 1px solid #000;
+            padding: 10px 30px;
+            width: 400px;
+            font-family: 'BMHannaAir';
+        }
+        .menu > li span {
+            border-bottom: 1px solid #000;
+            font-size: 30px;
+        }
+        .menu > li > ul {
+            margin-top: 10px;
+            text-align: left;
+        }
+        .menu > li > ul > li {
+            list-style-type: circle;
+        }
+        .menu > li > ul > li a:hover {
             text-decoration: underline;
             text-underline-position: under;
-        }
-        .box {
-            display: flex;
-            justify-content: space-around;
         }
     </style>
 </head>
 <body>
-    <div class="box">
-        <ul>
-            <li><a href="html/main.html">메인 (main.html)</a></li><br>
-            <li><a href="html/join_agree.html">회원가입 : 이용약관 (join_agree.html)</a></li>
-            <li><a href="html/join_insert.html">회원가입 : 정보입력 (join_insert.html)</a></li>
-            <li><a href="html/join_result.html">회원가입 : 가입완료 (join_result.html)</a></li>
-        </ul>
-
-        <ul>
-            <li><a href="connect/connect.php">DB접속 (connect.php)</a></li>
-        </ul>
+    <div id="wrap">
+        <span>디자인 + 코딩 + 개발 </span>
+        <h1>풀스택 도전!!! 블로그 사이트 만들기</h1>
+        <div class="menuWrap">
+            <ul class="menu">
+                <li><span>디자인(Figma)</span>
+                    <ul>
+                        <li><a href="html/main.html" target="_blank">메인 페이지</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li><span>코딩(HTML/CSS)</span>
+                    <ul>
+                        <li><a href="html/main.html" target="_blank">메인 페이지</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li><span>개발(PHP)</span>
+                    <ul>
+                        <li><a href="main/main.php" target="_blank">메인 페이지</a></li>
+                        <li><a href="join/joinAgree.php" target="_blank">회원가입 : 이용약관</a></li>
+                        <li><a href="join/joinInsert.php" target="_blank">회원가입 : 정보입력</a></li>
+                        <li><a href="join/joinResult.php" target="_blank">회원가입 : 가입완료</a></li>
+                        <li><a href="login/login.php" target="_blank">로그인</a></li>
+                        <li><a href="blog/blog.php" target="_blank">블로그</a></li>
+                        <li><a href="blog/blogCate.php" target="_blank">블로그 카테고리</a></li>
+                        <li><a href="blog/blogView.php" target="_blank">블로그 글 보기</a></li>
+                        <li><a href="blog/blogWrite.php" target="_blank">블로그 글 쓰기</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
