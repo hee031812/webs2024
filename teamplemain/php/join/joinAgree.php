@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
+<?php include "../include/head.php" ?>
     
 <style>
-    .login__btn2 {
-        margin: 0;
-    }
-    .login__box {
-        width: 50%;
-    }
-    @media (max-width : 650px) {
-        .login__box {
-            margin-left: 0;
-            width: 100%;
-            height: 530px;
-        }
+    body {
+        overflow-x: hidden;
     }
 </style>
 </head>

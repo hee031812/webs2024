@@ -1,51 +1,188 @@
-<header id="header">
-        <a class="header__logo" href="main.html">
-            <h1></h1>
-        </a>
-        <nav class="header__nav">
+<?php
+if (isset($_GET['category'])) {
+    $category = $_GET['category'];
+}
+// 초기에 표시할 카테고리 (예: '가구')
+$initialCategory = '가구';
+
+if (isset($_GET['subcate'])) {
+    $selectedCategory = $_GET['subcate'];
+} else {
+    $selectedCategory = $initialCategory;
+}
+?>
+<style>
+    .btn_gotop {
+        width: 40px;
+        height: 40px;
+        display: none;
+        position: fixed;
+        font-size: 20px;
+        bottom: 11vh;
+        right: 25px;
+        z-index: 999;
+        outline: none;
+        background-color: var(--black);
+        color: var(--white);
+        cursor: pointer;
+        /* padding: 5px 10px; */
+        border-radius: 50%;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    .btn_gotop:hover {
+        background-color: var(--white);
+        color: var(--black);
+        border-radius: 5px;
+    }
+</style>
+<!-- 상단으로 이동하기 버튼 -->
+<a href="#" class="btn_gotop">⏏</a>
+<header id="header" class="header">
+    <a class="header__logo" href="../main/main.php"><img src="../../assets/img/logo.png" alt="사이트로고"></a>
+    <div id="sidenav" class="sidenav">
+        <div id="slidebtn" class="slideBtn"> &#9776; </div>
+        <div id="close" class="close" onclick="closeNav()">☓</div>
+        <div class="menu">
+            <a href="../main/main.php">홈</a>
+            <a href="../subboard/submain.php">분리배출</a>
+            <a href="../subcate/subcate.php?subcate=가구">
+                <p>가구</p>
+            </a>
+            <a href="../subcate/subcate.php?subcate=가전">
+                <p>가전</p>
+            </a>
+            <a href="../subcate/subcate.php?subcate=용기포장">
+                <p>용기포장</p>
+            </a>
+            <a href="../subcate/subcate.php?subcate=패션잡화">
+                <p>패션잡화</p>
+            </a>
+            <a href="../subcate/subcate.php?subcate=음식물">
+                <p>음식물</p>
+            </a>
+            <a href="../subcate/subcate.php?subcate=기타">
+                <p>기타</p>
+            </a>
+            <a href="../subboard/footprint.php">탄소발자국</a>
+            <a href="../board/boardCate.php?category=공지사항">커뮤니티</a>
+            <a href="../board/boardCate.php?category=공지사항">
+                <p>공지사항</p>
+            </a>
+            <a href="../board/boardCate.php?category=질문하기">
+                <p>질문하기</p>
+            </a>
+            <a href="../board/boardCate.php?category=문의하기">
+                <p>문의하기</p>
+            </a>
+            <a href="../subboard/makers.php">만든사람들</a>
+        </div>
+    </div>
+    <nav class="header__nav">
+        <ul>
+            <li><a href="../subboard/submain.php">분리배출</a>
+                <ul class="submenu">
+                    <li><a href="../subcate/subcate.php?subcate=가구">가구</a></li>
+                    <li><a href="../subcate/subcate.php?subcate=가전">가전</a></li>
+                    <li><a href="../subcate/subcate.php?subcate=용기포장">용기포장</a></li>
+                    <li><a href="../subcate/subcate.php?subcate=패션잡화">패션잡화</a></li>
+                    <li><a href="../subcate/subcate.php?subcate=음식물">음식물</a></li>
+                    <li><a href="../subcate/subcate.php?subcate=기타">기타</a></li>
+                </ul>
+            </li>
+            <li><a href="../subboard/footprint.php">탄소발자국</a>
+            </li>
+            <li><a href="../board/boardCate.php?category=공지사항">커뮤니티</a>
+                <ul class="submenu">
+                    <li><a href="../board/boardCate.php?category=공지사항">공지사항</a></li>
+                    <li><a href="../board/boardCate.php?category=질문하기">질문하기</a></li>
+                    <li><a href="../board/boardCate.php?category=문의하기">문의하기</a></li>
+                </ul>
+            </li>
+            <li><a href="../subboard/makers.php">만든사람들</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="header__login">
+        <?php if (isset($_SESSION['memberId'])) { ?>
             <ul>
-                <li><a href="../main.html">
-                        <svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 22L2 22" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
-                            <path d="M2 11L10.1259 4.49931C11.2216 3.62279 12.7784 3.62279 13.8741 4.49931L22 11"
-                                stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
-                            <path opacity="0.5"
-                                d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5"
-                                stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
-                            <path d="M4 22V9.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
-                            <path d="M20 22V9.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
-                            <path opacity="0.5"
-                                d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393C9 14.8787 9 15.5858 9 17V22"
-                                stroke="#1C274C" stroke-width="1.5" />
-                            <path opacity="0.5"
-                                d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z"
-                                stroke="#1C274C" stroke-width="1.5" />
-                        </svg></a></li>
-                <li><a href="../../html/subboard/subpage.html">분리배출</a></li>
-                <li><a href="../../html/subboard/subpage2.html">탄소발자국</a></li>
-                <li><a href="../../html/board/notice.html">커뮤니티</a></li>
-                <li><a href="#">만든사람들</a></li>
+                <li><a href="../subcate/subcate.php?subcate=가구"><img src="../../assets/img/zoom2.svg" alt="searchicon"></a></li>
+                <li><a href="../mypage/mypage.php"><img class="login__mypage" src="../../assets/img/mypage2.svg" alt="mypageicon"></a></li>
+                <li class="login__wellcom"><a href="#">
+                        <?= $_SESSION['youName'] ?>님
+                    </a></li>
+                <li class="login__logout"><a href="../login/logout.php">로그아웃</a></li>
             </ul>
-        </nav>
-        <div class="header__search">
-            <input type="text" placeholder="1. 용기분리배출">
-            <span class="search__zoom"></span>
-        </div>
-        <div class="header__login">
-            <button class="login__btn">
-                <span><a href="../login/login.html"></a><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.5"
-                            d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
-                            stroke="#1C274C" stroke-width="1.5" />
-                        <path
-                            d="M11 12C11 13.3807 9.88071 14.5 8.5 14.5C7.11929 14.5 6 13.3807 6 12C6 10.6193 7.11929 9.5 8.5 9.5C9.88071 9.5 11 10.6193 11 12Z"
-                            stroke="#1C274C" stroke-width="1.5" />
-                        <path d="M11 12H15.5M15.5 12H17C17.5523 12 18 12.4477 18 13V14M15.5 12V13.5" stroke="#1C274C"
-                            stroke-width="1.5" stroke-linecap="round" />
-                    </svg></span>
-                <a href="../login/login.html">Login</a>
-            </button>
-        </div>
-    </header>
+        <?php } else { ?>
+            <ul>
+                <li><a href="../subcate/subcate.php?subcate=가구"><img src="../../assets/img/zoom2.svg" alt="searchicon"></a></li>
+                <li><a href="../login/login.php"><img src="../../assets/img/login.svg" alt="loginicon"></a></li>
+                <li><a href="../login/login.php">Login</a></li>
+            </ul>
+        <?php } ?>
+    </div>
+</header>
+<!-- //header -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    // 메뉴 
+    window.onload = function () {
+        let navList = document.querySelectorAll(".header__nav > ul > li");
+
+        navList.forEach(function (navItem) {
+            navItem.addEventListener("mouseover", function () {
+                const submenu = this.querySelector(".submenu");
+                submenu.style.height = submenu.scrollHeight + "px";
+            });
+        });
+        navList.forEach(function (navItem) {
+            navItem.addEventListener("mouseout", function () {
+                this.querySelector(".submenu").style.height = "0px";
+            });
+        });
+    };
+
+
+    //HAMBERGER MENU
+
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0%";
+        document.getElementById("slidebtn").style.display = "block";
+    }
+
+
+    $(document).ready(function () {
+        $(".slideBtn").click(function () {
+            if ($("#sidenav").width() == 0) {
+                document.getElementById("sidenav").style.width = "40%";
+
+                // document.getElementById("main").style.paddingRight = "250px";
+
+                // document.getElementById("slidebtn").style.paddingRight = "0px";
+                document.getElementById("slidebtn").style.display = "none";
+            } else {
+                document.getElementById("sidenav").style.width = "0";
+                document.getElementById("main").style.paddingRight = "0";
+                document.getElementById("slidebtn").style.paddingRight = "0";
+            }
+        });
+    });
+
+    //gotop script
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.btn_gotop').show();
+        } else {
+            $('.btn_gotop').hide();
+        }
+    });
+    $('.btn_gotop').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 400);
+        return false;
+    });
+</script>

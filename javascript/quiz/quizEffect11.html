@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,10 +25,11 @@
         }
     </style>
 </head>
+
 <body>
     <header id="header">
         <h1>
-            <a href="../index.html">Quiz</a>
+            <a href="../javascript12.html">Quiz</a>
         </h1>
         <nav>
             <ul>
@@ -40,7 +42,7 @@
         </nav>
     </header>
     <!-- //header -->
-    
+
     <main id="main">
         <div class="quiz__wrap"></div>
         <div class="quiz__score">0</div>
@@ -59,7 +61,7 @@
         const quizScore = document.querySelector(".quiz__score");
         let totalScore = 0;
 
-       
+
         // 문제 정보
         const quizInfo = [
             {
@@ -1378,13 +1380,13 @@
         // 문제 출력
         const updateQuiz = () => {
             const quizArray = [];
-        quizInfo.forEach((quiz, index) => {
-            quizArray.push(`
+            quizInfo.forEach((quiz, index) => {
+                quizArray.push(`
                 <div class="quiz">
                     <div class="quiz__header">${quiz.infoDate} ${quiz.infoType}
                     </div>
                     <div class="quiz__main">
-                        <div class="quiz__question">${index+1}.${quiz.infoQuestion}</div>
+                        <div class="quiz__question">${index + 1}.${quiz.infoQuestion}</div>
                         <div class="quiz__choice">
                             <label for="choice1-${index}">
                                 <input type="radio" id="choice1-${index}" name="choice${index}" value="1">
@@ -1411,8 +1413,8 @@
                     </div>
                 </div>
             `);
-        });
-        quizWrap.innerHTML = quizArray.join(" ");
+            });
+            quizWrap.innerHTML = quizArray.join(" ");
         }
         updateQuiz();
 
@@ -1453,4 +1455,5 @@
 
     </script>
 </body>
+
 </html>

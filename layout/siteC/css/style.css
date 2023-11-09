@@ -23,6 +23,8 @@ img {
     width: 1000px;
     display: flex;
     position: relative;
+    align-items: center;
+
 }
 
 /* aside */

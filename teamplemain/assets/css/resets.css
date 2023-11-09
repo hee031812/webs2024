@@ -42,11 +42,7 @@ input,
 select,
 table,
 textarea {
-    font-family: var(--main-nexon), var(--main-nanum), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
-}
-body {
-    max-width: 1920px;
-    padding-top: 100px;
+    font-family: var(--main-nanum), var(--mian-gmark), 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', 'dotum', '돋움';
 }
 
 /* 링크 초기화 */
@@ -117,10 +113,4 @@ table {
     font-size: 0;
     line-height: 0;
     text-indent: -9999px;
-}
-
-@media(max-width : 1100px ){
-    body {
-        padding-top: 70px;
-    }
 }

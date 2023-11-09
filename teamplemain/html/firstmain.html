@@ -11,106 +11,112 @@
     <!-- font -->
     <style>
         @import url("https://fonts.googleapis.com/css?family=Bungee+Hairline|Lato:300");
+
         html,
         body {
-        position: relative;
-        height: 100%;
-        color: white;
+            position: relative;
+            height: 100%;
+            color: white;
         }
 
         .main-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 40px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 40px;
         }
+
         .main-nav i {
-        font-size: 8px;
-        display: block;
-        margin: 10px;
-        transition: margin 200ms ease;
+            font-size: 8px;
+            display: block;
+            margin: 10px;
+            transition: margin 200ms ease;
         }
+
         .main-nav i:hover {
-        color: #ed542c;
+            color: #ed542c;
         }
-        .main-nav:hover > i {
-        margin: 15px 12px;
+
+        .main-nav:hover>i {
+            margin: 15px 12px;
         }
 
         .page {
-        height: 100%;
-        background-color: transparent;
+            height: 100%;
+            background-color: transparent;
         }
 
         .main-page-content {
-        background-color: transparent;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+            background-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
         }
+
         .main-page-content h1 {
-        font-family: "Bungee Hairline";
-        font-size: 80px;
-        line-height: 5.5rem;
+            font-family: "Bungee Hairline";
+            font-size: 80px;
+            line-height: 5.5rem;
         }
+
         .main-page-content h2 {
-        font-family: "Lato";
-        font-size: 25px;
-        letter-spacing: 2px;
+            font-family: "Lato";
+            font-size: 25px;
+            letter-spacing: 2px;
         }
 
         iframe {
-        position: absolute;
-        top: -100%;
+            position: absolute;
+            top: -100%;
         }
 
         .universe {
-        z-index: -10000;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        filter: contrast(120%);
-        background-color: black;
-        padding: 0px;
-        margin: 0px;
-        width: 100%;
-        height: 100%;
+            z-index: -10000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            filter: contrast(120%);
+            background-color: black;
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            height: 100%;
         }
 
         .universe-container {
-        width: 100%;
-        height: 100%;
-        background-image: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 80%);
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 80%);
         }
 
         .content {
-        width: inherit;
-        height: inherit;
+            width: inherit;
+            height: inherit;
         }
 
         #universe {
-        width: 100%;
-        height: 100%;
+            width: 100%;
+            height: 100%;
         }
 
         #footer {
-        position: absolute;
-        bottom: 0px;
-        height: 300px;
-        width: 100%;
+            position: absolute;
+            bottom: 0px;
+            height: 300px;
+            width: 100%;
         }
 
         #scene {
-        height: 100%;
-        position: absolute;
-        left: 50%;
-        margin-left: -800px;
-        z-index: 100000;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            margin-left: -800px;
+            z-index: 100000;
         }
 
 
@@ -119,6 +125,7 @@
             overflow: hidden;
             font-family: 'VitroPride';
         }
+
         #section7 .parallax__item__text {
             font-family: 'VitroPride';
             font-size: 4vw;
@@ -141,12 +148,13 @@
             transform: translate(-50%, -50%);
             box-sizing: border-box;
         }
+
         .container {
             position: relative;
             width: 24px;
             height: 24px;
         }
-        
+
         .chevron {
             position: absolute;
             width: 28px;
@@ -155,15 +163,15 @@
             transform: scale3d(0.5, 0.5, 0.5);
             animation: move 3s ease-out infinite;
         }
-        
+
         .chevron:first-child {
             animation: move 3s ease-out 1s infinite;
         }
-        
+
         .chevron:nth-child(2) {
             animation: move 3s ease-out 2s infinite;
         }
-        
+
         .chevron:before,
         .chevron:after {
             content: ' ';
@@ -173,37 +181,40 @@
             width: 51%;
             background: #fff;
         }
-        
+
         .chevron:before {
             left: 0;
             transform: skew(0deg, 30deg);
         }
-        
+
         .chevron:after {
             right: 0;
             width: 50%;
             transform: skew(0deg, -30deg);
         }
-        
+
         @keyframes move {
             25% {
-            opacity: 1;
-        
+                opacity: 1;
+
             }
+
             33% {
-            opacity: 1;
-            transform: translateY(30px);
+                opacity: 1;
+                transform: translateY(30px);
             }
+
             67% {
-            opacity: 1;
-            transform: translateY(40px);
+                opacity: 1;
+                transform: translateY(40px);
             }
+
             100% {
-            opacity: 0;
-            transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+                opacity: 0;
+                transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
             }
         }
-        
+
         .text {
             display: block;
             margin-top: 75px;
@@ -216,10 +227,10 @@
             opacity: .25;
             animation: pulse 2s linear alternate infinite;
         }
-        
+
         @keyframes pulse {
             to {
-            opacity: 1;
+                opacity: 1;
             }
         }
 
@@ -230,15 +241,18 @@
             align-items: center;
             padding-left: 43%;
         }
+
         .clickMe span {
             color: #fff;
         }
+
         .cta {
             position: relative;
             margin: auto;
             padding: 19px 22px;
             transition: all 0.2s ease;
         }
+
         .cta:before {
             content: "";
             position: absolute;
@@ -251,6 +265,7 @@
             height: 56px;
             transition: all 0.3s ease;
         }
+
         .clickMe span {
             position: relative;
             font-size: 16px;
@@ -261,9 +276,11 @@
             vertical-align: middle;
             color: #fff;
         }
-        .cta span:hover{
+
+        .cta span:hover {
             color: #000;
         }
+
         .cta svg {
             position: relative;
             top: 0;
@@ -276,13 +293,16 @@
             transform: translateX(-5px);
             transition: all 0.3s ease;
         }
+
         .cta:hover:before {
             width: 100%;
             background: #ffffff;
         }
+
         .cta:hover svg {
             transform: translateX(0);
         }
+
         .cta:active {
             transform: scale(0.96);
             color: #000;
@@ -465,7 +485,7 @@
     <!-- //Scroll Section7 -->
     <div class="clickMe">
         <a href="#" class="cta">
-            <a href="../html/main.html"><span>Click me</span></a>
+            <a href="../php/main/main.php"><span>Click me</span></a>
             <svg width="13px" height="10px" viewBox="0 0 13 10">
                 <path d="M1,5 L11,5"></path>
                 <polyline points="8 1 12 5 8 9"></polyline>

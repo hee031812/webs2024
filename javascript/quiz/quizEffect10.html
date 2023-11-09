@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="assets/css/quiz.css">
     <link rel="stylesheet" href="assets/css/ani.css">
 </head>
+
 <body class="fixed">
     <header id="header">
         <h1>
-            <a href="../index.html">Quiz</a>
+            <a href="../javascript12.html">Quiz</a>
         </h1>
         <nav>
             <ul>
@@ -46,33 +48,33 @@
 
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
-            fetchQuiz(); 
+            fetchQuiz();
         });
 
         // 문제 가져오기
         const fetchQuiz = () => {
             fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json")
-            .then(res => res.json())
-            .then(items => {
-                quizInfo = items.map((item,index) => {
-                    const formattedQuiz = {
-                        infoDate: "정보처리 " + item.time,
-                        infoQuestion: item.question,
-                        infoDesc: item.question_desc,
-                        infoAnswer: item.correct_answer
-                    }
-                    return formattedQuiz;
-                });
-                updataQuiz(currentIndex); 
-            })
-        } 
+                .then(res => res.json())
+                .then(items => {
+                    quizInfo = items.map((item, index) => {
+                        const formattedQuiz = {
+                            infoDate: "정보처리 " + item.time,
+                            infoQuestion: item.question,
+                            infoDesc: item.question_desc,
+                            infoAnswer: item.correct_answer
+                        }
+                        return formattedQuiz;
+                    });
+                    updataQuiz(currentIndex);
+                })
+        }
         fetchQuiz();
 
-        let currentIndex = 0;  
+        let currentIndex = 0;
 
         const updataQuiz = (index) => {
-            if(quizInfo.length > 0 && index < quizInfo.length) {
-            const formattedQuiz = quizInfo[index]; 
+            if (quizInfo.length > 0 && index < quizInfo.length) {
+                const formattedQuiz = quizInfo[index];
                 let quizWrapTag = `
                     <div class="quiz set">
                         <div class="quiz__header">
@@ -94,10 +96,10 @@
 
                 quizWrap.innerHTML = quizWrapTag;
 
-                function hiddenAdd(){
-                    const quizDesc = document.querySelector(".quiz__desc"); 
+                function hiddenAdd() {
+                    const quizDesc = document.querySelector(".quiz__desc");
 
-                    if(formattedQuiz.infoDesc !== null && formattedQuiz.infoDesc !== ""){
+                    if (formattedQuiz.infoDesc !== null && formattedQuiz.infoDesc !== "") {
 
                         quizDesc.textContent = formattedQuiz.infoDesc;
                     } else {
@@ -114,26 +116,26 @@
 
                 // 정답 확인 버튼
                 quizConfirm.addEventListener("click", () => {
-                    quizAnswer.classList.remove("none");   
-                    quizConfirm.classList.add("none");      
-                    quizNext.classList.remove("none");      
+                    quizAnswer.classList.remove("none");
+                    quizConfirm.classList.add("none");
+                    quizNext.classList.remove("none");
                 });
 
                 // 다음 문제 버튼
                 quizNext.addEventListener("click", () => {
-                    if(currentIndex < quizInfo.length - 1){
-                        quizAnswer.classList.add("none");    
-                        quizNext.classList.add("none");         
-                        quizConfirm.classList.remove("none");   
-                        currentIndex++;                         
-                        updataQuiz(currentIndex);               
+                    if (currentIndex < quizInfo.length - 1) {
+                        quizAnswer.classList.add("none");
+                        quizNext.classList.add("none");
+                        quizConfirm.classList.remove("none");
+                        currentIndex++;
+                        updataQuiz(currentIndex);
                     } else {
-                        updataQuiz(0);                         
+                        updataQuiz(0);
                     }
                 });
             }
         };
-        
+
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             updataQuiz(currentIndex);
@@ -142,4 +144,5 @@
     </script>
 
 </body>
+
 </html>

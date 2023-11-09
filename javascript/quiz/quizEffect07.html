@@ -11,7 +11,7 @@
 <body class="fixd">
     <header id="header">
         <h1>
-            <a href="../index.html">Quiz</a>
+            <a href="../javascript12.html">Quiz</a>
         </h1>
         <nav>
             <ul>
@@ -410,10 +410,10 @@
                 clearInterval(timerInterval);
             });
 
-                // 다시 풀기 버튼
-                cbtAgain.addEventListener("click", () => {
-                    cbtBox.classList.remove("none");
-                    cbtWrap.classList.add("none");
+            // 다시 풀기 버튼
+            cbtAgain.addEventListener("click", () => {
+                cbtBox.classList.remove("none");
+                cbtWrap.classList.add("none");
 
                 //모든 정답과 해설 숨기기
                 quizInfo.forEach((question, number) => {

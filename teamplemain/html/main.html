@@ -31,9 +31,11 @@
             transition-delay: 450ms;
             opacity: 0;
         }
+
         .slider__wrap--hacked {
             opacity: 1;
         }
+
         .slider__back {
             position: absolute;
             width: 100%;
@@ -43,6 +45,7 @@
             background-repeat: none;
             transition: filter 450ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
         }
+
         .slider__inner {
             width: 100%;
             height: 100%;
@@ -59,6 +62,7 @@
             padding: 15vh;
             box-sizing: border-box;
         }
+
         .slider__content {
             position: relative;
             top: 50%;
@@ -69,6 +73,7 @@
             opacity: 0;
             transition: opacity 450ms;
         }
+
         .slider__content h1 {
             font-weight: 900;
             font-size: 5rem;
@@ -77,6 +82,7 @@
             pointer-events: none;
             text-shadow: 0 0.375vh 0.75vh rgba(0, 0, 0, 0.1);
         }
+
         .slider__content a {
             cursor: pointer;
             font-size: 2.4vh;
@@ -84,6 +90,7 @@
             font-weight: 100;
             position: relative;
         }
+
         .slider__content a:after {
             content: "";
             display: block;
@@ -97,6 +104,7 @@
             transform-origin: 0% 50%;
             transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
         }
+
         .slider__content a:before {
             content: "";
             border-top: 1px solid white;
@@ -112,14 +120,17 @@
             left: 15vh;
             transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
         }
+
         .slider__content a:hover:after {
             transform: scaleX(1.5);
             transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
         }
+
         .slider__content a:hover:before {
             transform: translateX(6vh) translateY(-50%) rotate(45deg);
             transition: transform 1200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
         }
+
         .slider__slide {
             position: absolute;
             left: 0;
@@ -130,10 +141,12 @@
             pointer-events: none;
             z-index: 0;
         }
+
         .slider__slide--active {
             transform: translatex(0%);
             z-index: 2;
         }
+
         .slider__slide--active .slider__wrap {
             transform: translateX(0);
             transform-origin: 100% 50%;
@@ -141,11 +154,13 @@
             -webkit-animation: none;
             animation: none;
         }
+
         .slider__slide--active .slider__back {
             filter: blur(1.5vh);
             transition: filter 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
             transition-delay: 900ms !important;
         }
+
         .slider__slide--active .slider__inner {
             transform: scale(0.8);
             box-shadow: 0 1vh 6vh rgba(0, 0, 0, 0.2);
@@ -154,10 +169,12 @@
             transition: transform 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), box-shadow 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86), opacity 1ms step-end;
             transition-delay: 900ms;
         }
+
         .slider__slide--active .slider__content {
             opacity: 1;
             transition-delay: 1350ms;
         }
+
         .slider__slide:not(.slider__slide--active) .slider__wrap {
             -webkit-animation-name: hack;
             animation-name: hack;
@@ -222,6 +239,7 @@
                 opacity: 1;
             }
         }
+
         .slider__slide:nth-child(1) .slider__back,
         .slider__slide:nth-child(1) .slider__inner {
             background-image: url(../assets/img/sliderimg02.jpg);
@@ -236,6 +254,7 @@
         .slider__slide:nth-child(3) .slider__inner {
             background-image: url(../assets/img/sliderimg05.jpg);
         }
+
         .sig {
             position: fixed;
             bottom: 8px;
@@ -248,6 +267,7 @@
             letter-spacing: 2px;
             z-index: 9999;
         }
+
         .pauseButton {
             margin-left: 6rem;
             display: inline-block;
@@ -262,6 +282,7 @@
             border: 1px solid var(--black200);
             transition: all 0.3s;
         }
+
         .pauseButton:hover {
             transform: scale(1.5);
             background-color: #fff;
@@ -281,12 +302,14 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        .resumeButton svg {
-        }
+
+        .resumeButton svg {}
+
         .resumeButton:hover {
             transform: scale(1.5);
             background-color: #fff;
         }
+
         #tagWrap {
             height: 650px;
             display: flex;
@@ -295,6 +318,7 @@
             flex-direction: column;
             margin-bottom: 100px;
         }
+
         .intro__inner {
             width: 100%;
             height: 920px;
@@ -309,10 +333,12 @@
         .intro__text h3 {
             text-align: center;
         }
-        @media (max-width:660px){
+
+        @media (max-width:660px) {
             .slider__content h1 {
                 font-size: 2rem;
             }
+
             .pauseButton {
                 margin-left: 1rem;
             }
@@ -346,10 +372,28 @@
                                 d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z"
                                 stroke="#1C274C" stroke-width="1.5" />
                         </svg></a></li>
-                <li><a href="../html/subboard/subpage.html">분리배출</a></li>
-                <li><a href="../html/subboard/subpage2.html">탄소발자국</a></li>
-                <li><a href="../html/board/notice.html">커뮤니티</a></li>
-                <li><a href="../html/subboard/makers.html">만든사람들</a></li>
+                <li><a href="#">분리배출</a>
+                    <ul class="submenu">
+                        <li><a href="#">가구</a></li>
+                        <li><a href="#">가전</a></li>
+                        <li><a href="#">용기포장</a></li>
+                        <li><a href="#">패션잡화</a></li>
+                        <li><a href="#">음식물</a></li>
+                        <li><a href="#">기타</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">탄소발자국</a>
+                </li>
+                <li><a href="#">커뮤니티</a>
+                    <ul class="submenu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">글보기</a></li>
+                        <li><a href="#">질문하기</a></li>
+                        <li><a href="#">1:1 질문</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">만든사람들</a>
+                </li>
             </ul>
         </nav>
         <div class="header__search">
@@ -359,16 +403,16 @@
         <div class="header__login">
             <button class="login__btn">
                 <span><a href="../html/login/login.html"><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path opacity="0.5"
-                            d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
-                            stroke="#1C274C" stroke-width="1.5" />
-                        <path
-                            d="M11 12C11 13.3807 9.88071 14.5 8.5 14.5C7.11929 14.5 6 13.3807 6 12C6 10.6193 7.11929 9.5 8.5 9.5C9.88071 9.5 11 10.6193 11 12Z"
-                            stroke="#1C274C" stroke-width="1.5" />
-                        <path d="M11 12H15.5M15.5 12H17C17.5523 12 18 12.4477 18 13V14M15.5 12V13.5" stroke="#1C274C"
-                            stroke-width="1.5" stroke-linecap="round" />
-                    </svg></a></span>
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.5"
+                                d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
+                                stroke="#1C274C" stroke-width="1.5" />
+                            <path
+                                d="M11 12C11 13.3807 9.88071 14.5 8.5 14.5C7.11929 14.5 6 13.3807 6 12C6 10.6193 7.11929 9.5 8.5 9.5C9.88071 9.5 11 10.6193 11 12Z"
+                                stroke="#1C274C" stroke-width="1.5" />
+                            <path d="M11 12H15.5M15.5 12H17C17.5523 12 18 12.4477 18 13V14M15.5 12V13.5"
+                                stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
+                        </svg></a></span>
                 <a class="login__text" href="../html/login/login.html">Login</a>
             </button>
         </div>
@@ -383,7 +427,8 @@
                 <div class="slider__inner">
                     <div class="slider__content">
                         <h1>환경을 <br> 생각하고</h1><a class="go-to-next">next</a><br>
-                        <div class="pauseButton"></div><div class="resumeButton"></div>
+                        <div class="pauseButton"></div>
+                        <div class="resumeButton"></div>
                     </div>
                 </div>
             </div>
@@ -395,7 +440,8 @@
                     <div class="slider__content">
                         <div class="slider__content">
                             <h1>지구를 <br> 살리고</h1><a class="go-to-next">next</a><br>
-                            <div class="pauseButton"></div><div class="resumeButton"></div>
+                            <div class="pauseButton"></div>
+                            <div class="resumeButton"></div>
                         </div>
                     </div>
                 </div>
@@ -408,7 +454,8 @@
                     <div class="slider__content">
                         <div class="slider__content">
                             <h1>더나은 <br> 미래를 만든다</h1><a class="go-to-next">next</a><br>
-                            <div class="pauseButton"></div><div class="resumeButton"></div>
+                            <div class="pauseButton"></div>
+                            <div class="resumeButton"></div>
                         </div>
                     </div>
                 </div>
@@ -668,6 +715,7 @@
             </div>
         </section>
 
+
     </main>
 
     <footer id="footer" role="contentinfo">
@@ -731,6 +779,22 @@
         //         }
         //     }, 3000);
         // };
+        // 메뉴 
+        window.onload = function () {
+            let navList = document.querySelectorAll(".header__nav > ul > li");
+
+            navList.forEach(function (navItem) {
+                navItem.addEventListener("mouseover", function () {
+                    const submenu = this.querySelector(".submenu");
+                    submenu.style.height = submenu.scrollHeight + "px";
+                });
+            });
+            navList.forEach(function (navItem) {
+                navItem.addEventListener("mouseout", function () {
+                    this.querySelector(".submenu").style.height = "0px";
+                });
+            });
+        };
 
         //슬라이드 
         $(document).ready(function () {

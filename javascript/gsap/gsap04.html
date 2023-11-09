@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSAP Scroll Effect04</title>
     <link rel="stylesheet" href="../../assets/css/default.min.css">
     <link rel="stylesheet" href="../gsap/css/modal.css">
-    
+
     <link rel="stylesheet" href="../gsap/css/gsap.css">
     <link rel="stylesheet" href="assets/css/ani.css">
     <link rel="stylesheet" href="../assets/css/default.min.css">
 
     <style>
-       * {
+        * {
             margin: 0;
             padding: 0;
         }
+
         a {
             color: #fff;
             text-decoration: none;
         }
+
         body {
             color: #fff;
             background-color: #111;
             font-family: 'NexonLv1Gothic';
         }
+
         #parallax__title {
             position: fixed;
             left: 20px;
             top: 20px;
             z-index: 10000;
         }
+
         #parallax__title h1 {
             font-size: 30px;
             border-bottom: 1px dashed #fff;
@@ -39,15 +44,19 @@
             font-weight: 400;
             display: inline-block;
         }
+
         #parallax__title p {
             font-size: 16px;
         }
+
         #parallax__title ul {
             margin-top: 10px;
         }
+
         #parallax__title li {
             display: inline;
         }
+
         #parallax__title li a {
             width: 20px;
             height: 20px;
@@ -58,6 +67,7 @@
             font-size: 12px;
             display: inline-block;
         }
+
         #parallax__title li.active a {
             background-color: #fff;
             color: #000;
@@ -70,6 +80,7 @@
             width: 98%;
             margin: 0 auto;
         }
+
         .parallax__item {
             width: 1000px;
             max-width: 70vw;
@@ -79,10 +90,12 @@
             position: relative;
             padding-top: 15vw;
         }
-        .parallax__item:nth-child(even){
+
+        .parallax__item:nth-child(even) {
             margin-left: 0;
             text-align: right;
         }
+
         .parallax__item__num {
             font-size: 35vw;
             position: absolute;
@@ -92,14 +105,17 @@
             font-family: "Lato";
             font-weight: 100;
         }
+
         .parallax__item:nth-child(even) .parallax__item__num {
             left: auto;
             right: -5vw;
         }
+
         .parallax__item__title {
             padding-bottom: 5px;
             font-weight: 400;
         }
+
         .parallax__item__imgWrap {
             position: relative;
             width: 100%;
@@ -107,11 +123,12 @@
             padding-bottom: 56.25%;
             overflow: hidden;
         }
+
         .parallax__item__img {
             position: absolute;
             left: -5%;
             top: -5%;
-            width: 110%;   
+            width: 110%;
             height: 110%;
             background-image: url(img/img10-min.jpg);
             background-repeat: no-repeat;
@@ -120,41 +137,53 @@
             filter: saturate(0%);
             transition: all 1s;
         }
+
         .parallax__item__img:hover {
             filter: saturate(100%);
             transform: scale(1.025);
 
         }
+
         #section1 .parallax__item__img {
             background-image: url(img/img01-min.jpg);
         }
+
         #section2 .parallax__item__img {
             background-image: url(img/img02-min.jpg);
         }
+
         #section3 .parallax__item__img {
             background-image: url(img/img03-min.jpg);
         }
+
         #section4 .parallax__item__img {
             background-image: url(img/img04-min.jpg);
         }
+
         #section5 .parallax__item__img {
             background-image: url(img/img05-min.jpg);
         }
+
         #section6 .parallax__item__img {
             background-image: url(img/img06-min.jpg);
         }
+
         #section7 .parallax__item__img {
             background-image: url(img/img07-min.jpg);
         }
+
         #section8 .parallax__item__img {
             background-image: url(img/img08-min.jpg);
         }
+
         #section9 .parallax__item__img {
             background-image: url(img/img09-min.jpg);
         }
+
         #section10 .parallax__item__img {
             background-image: url(img/img10-min.jpg);
         }
+
         .parallax__item__desc {
             font-size: 4vw;
             line-height: 1.4;
@@ -164,6 +193,7 @@
             position: relative;
             word-break: keep-all;
         }
+
         .parallax__item:nth-child(even) .parallax__item__desc {
             margin-left: auto;
             margin-right: -4vw;
@@ -284,6 +314,10 @@
         </section>
         <!-- //section9 -->
     </main>
+    <footer id="footer">
+        <a href="mailto:heejin@gmail.com">heejin@gmail.com</a>
+    </footer>
+    <!-- //footer -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -291,51 +325,52 @@
     <script src="../gsap/js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script>
-    //    // 01. 이질감 표현하기
-    //    gsap.to(".parallax__item__desc", {
-    //     yPercent: -100,
-    //     ease: "none",
-    //     duration: 0.5,
-    //     scrollTrigger: {
-    //         trigger: ".parallax__item__desc",
-    //         start:"top bottom",
-    //         end: "bottom, top",
-    //         markers: true,
-    //         scrub: true
-    //     }
-    //    })
+        //    // 01. 이질감 표현하기
+        //    gsap.to(".parallax__item__desc", {
+        //     yPercent: -100,
+        //     ease: "none",
+        //     duration: 0.5,
+        //     scrollTrigger: {
+        //         trigger: ".parallax__item__desc",
+        //         start:"top bottom",
+        //         end: "bottom, top",
+        //         markers: true,
+        //         scrub: true
+        //     }
+        //    })
 
-    // 02. 여러개 이질감 표현하기
-    
-    gsap.utils.toArray(".parallax__item__desc").forEach(item => {
-        gsap.to(item, {
-            yPercent: -100,
-            ease: "none",
-            duration: 0.5,
-            scrollTrigger: {
-                trigger: item,
-                start:"top bottom",
-                end: "bottom, top",
-                markers: true,
-                scrub: 0.5
-            }
-        });
-    })
+        // 02. 여러개 이질감 표현하기
 
-    // gsap.utils.toArray(".parallax__item__num").forEach(item => {
-    //     gsap.to(item, {
-    //         xPercent: -100,
-    //         ease: "none",
-    //         duration: 0.5,
-    //         scrollTrigger: {
-    //             trigger: item,
-    //             start:"top bottom",
-    //             end: "bottom, top",
-    //             markers: true,
-    //             scrub: 0.5
-    //         }
-    //     });
-    // })
+        gsap.utils.toArray(".parallax__item__desc").forEach(item => {
+            gsap.to(item, {
+                yPercent: -100,
+                ease: "none",
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top bottom",
+                    end: "bottom, top",
+                    markers: true,
+                    scrub: 0.5
+                }
+            });
+        })
+
+        // gsap.utils.toArray(".parallax__item__num").forEach(item => {
+        //     gsap.to(item, {
+        //         xPercent: -100,
+        //         ease: "none",
+        //         duration: 0.5,
+        //         scrollTrigger: {
+        //             trigger: item,
+        //             start:"top bottom",
+        //             end: "bottom, top",
+        //             markers: true,
+        //             scrub: 0.5
+        //         }
+        //     });
+        // })
     </script>
 </body>
+
 </html>

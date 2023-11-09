@@ -3,33 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃</title>
+    <title>해운대 빛축제</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="script/jquery.min.js"></script>
+    <script src="script/script.js"></script>
 </head>
 <body>
     <div id="wrap">
-        <header id="header">
-            <h1 class="logo"></h1>
-            <div class="nav"></div>
-        </header>
-        <!-- //header -->
-
-        <article id="slider">
-
-        </article>
-        <!-- //slider -->
+        <aside id="aside">
+            <h1 class="logo">
+                해운대 빛축제
+            </h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">이용안내</a>
+                        <ul class="submenu">
+                            <li><a href="#">이용방법</a></li>
+                            <li><a href="#">이용시간</a></li>
+                            <li><a href="#">이용요금</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이벤트정보</a>
+                        <ul class="submenu">
+                            <li><a href="#">현장이벤트</a></li>
+                            <li><a href="#">온라인이벤트</a></li>
+                            <li><a href="#">이벤트예약</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">프로그램안내</a></li>
+                            <li><a href="#">온라인예약</a></li>
+                            <li><a href="#">단체예약상담</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객센터</a>
+                        <ul class="submenu">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자주묻는질문</a></li>
+                            <li><a href="#">자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- //aside -->
 
         <main id="main">
-            <section class="contents1"></section>
-            <section class="contents2"></section>
+            <article id="slider">
+                <div class="sliderWrap">
+                    <div class="slider s1">
+                        <img src="../siteH/img/slider1.png" alt="">
+                        <div class="text">
+                            <h1>해운대 빛축제 행사 시작</h1>
+                        </div>
+                    </div> 
+                    <div class="slider s2">
+                        <img src="../siteH/img/slider2.png" alt="">
+                        <div class="text">
+                            <h1>해운대 빛축제 행사 시작</h1>
+                        </div>
+                    </div> 
+                    <div class="slider s3">
+                        <img src="../siteH/img/slider3.png" alt="">
+                        <div class="text">
+                            <h1>해운대 빛축제 행사 시작</h1>
+                        </div>
+                    </div> 
+                </div>
+            </article>
+            <!-- //article -->
+
+            <section id="contents">
+                <section class="info">
+                    <h3 class="info-menu">
+                        <a href="#" class="active">공지사항</a> |
+                        <a href="#">갤러리</a>
+                    </h3>
+                    <div class="info-cont">
+                        <div class="notice">
+                            <ul>
+                                <li class="#"><a href="#">공지사항입니다.</li>
+                                <li><a href="#">공지사항입니다.</li>
+                                <li><a href="#">공지사항입니다.</li>
+                                <li><a href="#">공지사항입니다.</li>
+                            </ul>
+                        </div>
+                        <div class="gallery">
+                            <ul>
+                                <li><a href="#"><img src="../siteH/img/gl.png" alt="" class="popup-btn"></a></li>
+                                <li><a href="#"><img src="../siteH/img/gl2.png" alt=""></a></li>
+                                <li><a href="#"><img src="../siteH/img/gl3.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <article class="banner">
+                    <h3>해운대불꽃축제</h3>
+                </article>
+                <article class="link">
+                    <a href="#">바로가기</a>
+                </article>
+
+            </section>
+            <!-- //contents -->
+
+            <footer id="footer">
+                <div class="footer1">
+                    <h3>해운대불꽃축제</h3>
+                </div>
+                <div class="footer2">
+                    <div class="footer2-1">
+                        <h2>하단메뉴</h2>
+                    </div>
+                    <div class="footer2-2">
+                        <h2>카피라이터</h2>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer -->
+
+            <div class="popup-view">
+                <h3>불꽃축제 공지사항</h3>
+                <p>2023년 하반기 불꽃축제 신청안내
+                    안녕하세요. 불꽃축제 주최 입니다. 2023년 불꽃축제에 관심있는 분들은
+                    많은 연락바랍니다.
+                </p>
+                <a href="#" class="popup-close">닫기</a>
+            </div>
         </main>
-        <!-- main -->
-        <footer id="footer">
-            <div class="footer1"></div>
-            <div class="footer2"></div>
-            <div class="footer3"></div>
-        </footer>
-         <!--//footer  -->
+        <!-- //main -->
     </div>
+    <!-- //wrap -->
 </body>
 </html>

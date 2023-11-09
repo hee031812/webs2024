@@ -9,7 +9,53 @@
     <link rel="stylesheet" href="assets/css/search.css">
     <link href="https://webfontworld.github.io/Rebecca/Rebecca.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .search__title {
+        border: 2px solid #ff7300;
+        width: 800px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #ff730008;
+    }
+    .search__box {
+        padding: 40px 0 40px 0;
+        width: 800px;
+        height: 50px;
+        border-radius: 5px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .search__list ul {
+        margin-top: -80px;
+        margin-bottom: 30px;
+        list-style: none;
+        text-align: center;
+    }
+    .search__box label{
+        position: absolute;
+        width: 78px;
+        height: 55px;
+        background-color: #ff7300;
+        top: 23px;
+        right: 110px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        color: #000;
+        border: 2px solid #c65b03;
+        font-size: 14px;
+    }
+    .search__box input {
+        text-align: center;
+        margin-top: 20px;
+        position: relative;
+    }
 
+</style>
 </head>
 
 <body>
@@ -33,11 +79,12 @@
     <!-- //header -->
     <main>
         <div class="search__wrap">
-            <div class="content">
+
                 <div class="search__title">
                     <span>indexOf()/search()를 이용하여 검색하기</span>
                     <h2>CSS 속성 검색하기</h2>
                 </div>
+                <div class="content">
                 <div class="search__box">
                     <label for="searchBox">검색하기</label>
                     <input type="text" id="searchBox" name="searchBox" placeholder="CSS 속성을 입력해주세요!">
